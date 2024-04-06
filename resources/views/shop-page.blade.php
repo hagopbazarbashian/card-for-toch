@@ -60,11 +60,10 @@
        <div class="row gx-lg-0">
           <div class="col-lg-4 col-md-6 d-flex flex-column">
              <div class="product-box left-1-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay" style="background-image: url(./assets/images/shop/card/01.webp);"></div>
+                <a href="#" class="card-link"></a>
+                <div class="card-img-overlay product-card-img-overlay" style="background-image: url({{ asset('product-images/' . $newproductszoom1->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
-                   <h5 class="card-title">Ghost Spider</h5>
-                   <h4 class="parent-heading">Monster-House</h4>
+                   <h4 class="parent-heading">{{$newproductszoom1->title}}</h4>
                    <div class="iq-button link-button">
                       <a href="" class="btn text-capitalize position-relative">
                          <span class="button-text" style="color:#68b7e2">Shop Now</span>
@@ -106,10 +105,9 @@
           <div class="col-lg-4 col-md-12 d-flex flex-column mt-lg-0 mt-md-4 mt-4">
              <div class="product-box right-1-productbox">
                 <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay md-mt-5" style="background-image: url(./assets/images/shop/card/04.webp);"></div>
+                <div class="card-img-overlay product-card-img-overlay md-mt-5" style="background-image: url({{ asset('product-images/' . $newproductszoom2->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
-                   <h5 class="card-title">Harry David</h5>
-                   <h4 class="parent-heading">Warner Bros Films</h4>
+                   <h4 class="parent-heading">{{$newproductszoom2->title}}</h4>
                    <div class="iq-button link-button">
                       <a href="" class="btn text-capitalize position-relative">
                          <span class="button-text" style="color:#68b7e2">Shop Now</span>
@@ -147,10 +145,9 @@
              </div> --}}
              <div class="product-box right-2-productbox">
                 <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url(./assets/images/shop/card/05.webp);"></div>
+                <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url({{ asset('product-images/' . $newproductszoom3->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
-                   <h5 class="card-title">Fantasia</h5>
-                   <h4 class="parent-heading">Disney World</h4>
+                   <h4 class="parent-heading">{{$newproductszoom3->title}}</h4>
                    <div class="iq-button link-button">
                       <a href="" class="btn text-capitalize position-relative">
                          <span class="button-text" style="color:#68b7e2">Shop Now</span>

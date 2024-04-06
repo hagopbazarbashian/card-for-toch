@@ -86,7 +86,6 @@
                             </div>
                             <div class="col">
                                 <select  name="symbole" class="form-select" aria-label="Default select example">
-                                    <option selected>Add price symbol</option>
                                     <option value="$">$</option> <!-- &#36; is the HTML entity for dollar sign ($) -->
                                     <option value="£">£</option> <!-- &#163; is the HTML entity for pound sign (£) -->
                                     <option value="€">€</option> <!-- &#8364; is the HTML entity for euro sign (€) -->

@@ -19,9 +19,12 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .product{
-        width: 33%;
-    }
+
+    .row-cols-lg-5>*
+  {
+    width: 33%;
+  }
+
 }
 
 

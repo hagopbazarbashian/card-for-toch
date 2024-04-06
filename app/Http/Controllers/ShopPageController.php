@@ -21,7 +21,19 @@ class ShopPageController extends Controller
             $shopcardscount = shopcard::where('user_session', $userSession)->count();
             $shopsliders = shopslider::orderBy('created_at', 'desc')->get();
             $newproducts = newproduct::with('photo')->orderBy('created_at', 'desc')->get();
-            return view('shop-page' ,compact('shopsliders','newproducts','shopcards','shopcardscount','total'));
+            // Zoom
+            $newproductszoom1 = newproduct::with('photo')->orderBy('created_at', 'desc')->first();
+            $newproductszoom2 = newproduct::with('photo')->orderBy('created_at', 'desc')->skip(1)->first();
+            $newproductszoom3 = newproduct::with('photo')->orderBy('created_at', 'desc')->skip(2)->first();
+            return view('shop-page' ,compact('shopsliders',
+            'newproducts',
+            'shopcards',
+            'shopcardscount',
+            'total',
+            'newproductszoom1',
+            'newproductszoom2',
+            'newproductszoom3'
+        ));
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
