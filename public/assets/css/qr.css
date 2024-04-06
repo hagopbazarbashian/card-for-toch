@@ -1,0 +1,111 @@
+body.qrcode-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 9998; /* Ensure the pseudo-element is behind the container */
+}
+
+.qrcode-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.qrcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    top: 49px;
+}
+
+.qrcode img {
+    max-width: 100%; /* Ensure the QR code image doesn't exceed the container width */
+    max-height: 100%; /* Ensure the QR code image doesn't exceed the container height */
+}
+
+.copy-link-button {
+    background-color: #68b7e2 ;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 101px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
+}
+
+.copy-link-buttonqr{
+    background-color: #68b7e2 ;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
+}
+
+.copy-link-button:hover {
+    background-color: #68b7e2;
+}
+
+
+/* For All page */
+@media (min-width: 768px) {
+    .qrcode-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        padding: 20px;
+        /* border: 1px solid #ccc; */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        width: 41%;
+        height: 100%;
+        display: none;
+    }
+
+}
