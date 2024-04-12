@@ -18,7 +18,7 @@ class ShopPageController extends Controller
             foreach ($shopcards as $shopcard) {
                 $total += $shopcard->price;
             }
-            $shopcardscount = shopcard::where('user_session', $userSession)->count();
+            $shopcardscount = shopcard::where('user_session', $userSession)->count();  
             $shopsliders = shopslider::orderBy('created_at', 'desc')->get();
             $newproducts = newproduct::with('photo')->orderBy('created_at', 'desc')->get();
             // Zoom

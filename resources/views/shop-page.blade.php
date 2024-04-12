@@ -60,7 +60,7 @@
        <div class="row gx-lg-0">
           <div class="col-lg-4 col-md-6 d-flex flex-column">
              <div class="product-box left-1-productbox">
-                <a href="#" class="card-link"></a>
+                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
                 <div class="card-img-overlay product-card-img-overlay" style="background-image: url({{ asset('product-images/' . $newproductszoom1->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
                    <h4 class="parent-heading">{{$newproductszoom1->title}}</h4>
@@ -104,7 +104,7 @@
           --}}
           <div class="col-lg-4 col-md-12 d-flex flex-column mt-lg-0 mt-md-4 mt-4">
              <div class="product-box right-1-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
+                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
                 <div class="card-img-overlay product-card-img-overlay md-mt-5" style="background-image: url({{ asset('product-images/' . $newproductszoom2->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
                    <h4 class="parent-heading">{{$newproductszoom2->title}}</h4>
@@ -144,7 +144,7 @@
                 </div>
              </div> --}}
              <div class="product-box right-2-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
+                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
                 <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url({{ asset('product-images/' . $newproductszoom3->photo[0]->photo) }});"></div>
                 <div class="card-body w-100">
                    <h4 class="parent-heading">{{$newproductszoom3->title}}</h4>

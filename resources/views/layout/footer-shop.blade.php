@@ -41,22 +41,22 @@
               <div class="footer-logo">
                 <!--Logo -->
                <div class="logo-default">
-                   <a class="navbar-brand text-primary" href="./index.html"> 
+                   <a class="navbar-brand text-primary" href="./index.html">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
                </div>
                <div class="logo-hotstar">
-                   <a class="navbar-brand text-primary" href="./index.html"> 
+                   <a class="navbar-brand text-primary" href="./index.html">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
-               </div> 
+               </div>
                <div class="logo-prime">
-                   <a class="navbar-brand text-primary" href="./index.html"> 
+                   <a class="navbar-brand text-primary" href="./index.html">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
-               </div> 
+               </div>
                <div class="logo-hulu">
-                   <a class="navbar-brand text-primary" href="./index.html"> 
+                   <a class="navbar-brand text-primary" href="./index.html">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
                </div>
@@ -101,16 +101,16 @@
                 <p class="pt-3 mb-3 text-uppercase">We Accept Payments</p>
                 <ul class="list-inline d-flex align-items-center flex-wrap gap-3 m-0">
                   <li>
-                    <img src="./assets/images/footer/01.webp" alt="visa">
+                    <img src="{{asset('assets/images/footer/01.webp')}}" alt="visa">
                   </li>
                   <li>
-                    <img src="./assets/images/footer/02.webp" alt="visa">
+                    <img src="{{asset('assets/images/footer/02.webp')}}" alt="visa">
                   </li>
                   <li>
-                    <img src="./assets/images/footer/03.webp" alt="visa">
+                    <img src="{{asset('assets/images/footer/03.webp')}}" alt="visa">
                   </li>
                   <li>
-                    <img src="./assets/images/footer/04.webp" alt="visa">
+                    <img src="{{asset('assets/images/footer/04.webp')}}" alt="visa">
                   </li>
                 </ul>
               </div>
@@ -123,10 +123,10 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center">
-            <p class="m-0 font-size-14 text-capitalize">© <span class="currentYear"></span><a href="./index.html"> STREAMIT </a> All rights reserved.</p>
+            <p class="m-0 font-size-14 text-capitalize">© <span class="currentYear"></span><a href="{{route('welcome')}}"> TOCH.AM </a> All rights reserved.</p>
           </div>
           <div class="col-md-6 text-md-end text-center">
-            <p class="m-0 font-size-14">Powered by <a href="https://iqonic.design/" target="_blank">IQONIC DESIGN</a></p>
+            <p class="m-0 font-size-14">Powered by <a href="#" target="_blank">Smart Develop</a></p>
           </div>
         </div>
       </div>

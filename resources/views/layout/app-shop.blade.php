@@ -9,7 +9,7 @@
   <!-- Google Font Api KEY-->
   <meta name="google_font_api" content="AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k">
 
-  @include('layout.style-shop')
+  @include('layout.style-shop')  
 
 </head>
 
@@ -25,10 +25,9 @@
       <!--Nav Start-->
      @include('layout.nav-bar-shop')
      @yield('home')
+   </main>
 
-</main>
 @include('layout.footer-shop')
-
 
 
   <div id="back-to-top" style="display: none;">
@@ -37,6 +36,37 @@
      </a>
   </div>
   @include('layout.script_bottom')
+
+@if ($errors->any())
+@foreach ($errors->all() as $error)
+<script>
+    iziToast.error({
+    title: '',
+    position: 'topRight',
+    message: '{{ $error }}',
+});
+</script>
+@endforeach
+@endif
+@if (session()->get('error'))
+<script>
+    iziToast.error({
+    title: '',
+    position: 'topRight',
+    message: '{{ session()->get('error') }}',
+});
+</script>
+@endif
+
+@if (session()->get('succes'))
+<script>
+    iziToast.success({
+    title: '',
+    position: 'topRight',
+    message: '{{ session()->get('succes') }}',
+});
+</script>
+@endif
 </body>
 
 </html>

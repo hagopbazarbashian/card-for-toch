@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopPageController;
 use App\Http\Controllers\ShopCardController;
 use App\Http\Controllers\ViewAllProductController;
+use App\Http\Controllers\SingleShopPageController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -48,6 +49,7 @@ Route::get('view-all' , [ViewAllProductController::class , 'index'])->name('view
 //End Shop card System
 Route::post('/add' , [ShopCardController::class , 'addToCart']);
 Route::post('/update-price' , [ShopCardController::class , 'updatepricecard']);
+Route::get('single-card/{id}' , [SingleShopPageController::class , 'index'])->name('single_card');
 //End Shop Page System
 //////////////////////////////////
 

@@ -33,7 +33,7 @@
                 @endif
                <div class="image-wrap">
                 @foreach ($newproduct->photo->take(1) as $photo)
-                <a href="../shop/product-detail.html">
+                <a href="{{route('single_card',$newproduct->id)}}">
                     <div class="product-image">
                         <img src="{{ asset('product-images/'. $photo->photo) }}" class="img-fluid w-100" alt="productImg-01" loading="lazy" />
                     </div>
@@ -43,7 +43,7 @@
                </div>
                <div class="product-caption">
                   <h5 class="product__title">
-                     <a href="../shop/product-detail.html" class="title-link">{{$newproduct->title}}</a>
+                     <a href="{{route('single_card',$newproduct->id)}}" class="title-link">{{$newproduct->title}}</a>
                   </h5>
                   @if (isset($newproduct->discount))
                   <div class="price-detail">
