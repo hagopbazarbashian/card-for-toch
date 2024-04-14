@@ -9,7 +9,7 @@
   <!-- Google Font Api KEY-->
   <meta name="google_font_api" content="AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k">
 
-  @include('layout.style-shop')  
+  @include('layout.style-shop')
 
 </head>
 
@@ -23,8 +23,10 @@
   <!-- loader END -->  <!-- loader END -->
   <main class="main-content">
       <!--Nav Start-->
-     @include('layout.nav-bar-shop')
-     @yield('home')
+    <header class="header-center-home header-merchandise">
+        @include('layout.nav-bar-shop')
+    </header>
+    @yield('home')
    </main>
 
 @include('layout.footer-shop')

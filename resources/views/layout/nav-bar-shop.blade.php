@@ -3,51 +3,32 @@
     <div class="header-top d-xl-block d-none">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-3">
+                <div class="col-md-3 d-flex justify-content-center">
                     <!--Logo -->
                     <div class="logo-default">
-                        <a class="navbar-brand text-primary" href="./index.html">
+                        <a class="navbar-brand text-primary" href="#">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-hotstar">
-                        <a class="navbar-brand text-primary" href="./index.html">
+                        <a class="navbar-brand text-primary" href="#">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-prime">
-                        <a class="navbar-brand text-primary" href="./index.html">
+                        <a class="navbar-brand text-primary" href="#">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-hulu">
-                        <a class="navbar-brand text-primary" href="./index.html">
+                        <a class="navbar-brand text-primary" href="#">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0">
-                        <li>
-                            <div class="search-box-2">
-                                <form>
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <button type="submit" class="search-btn">
-                                        <svg width="16" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                            </circle>
-                                            <path d="M18.0186 18.4851L21.5426 22" stroke="currentColor"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
-
-                        <li>
+                        {{-- <li>
                             <a href="#offcanvasCart" class="text-white" data-bs-toggle="offcanvas">
                                 <span class="btn-icon rounded-pill user-icons">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16"
@@ -67,7 +48,7 @@
                                     </svg>
                                 </span>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- Login Button --}}
                         <li class="dropdown" id="itemdropdown1">
                             <a class="text-white d-flex align-items-center" href="/sddsds" id="navbarDropdown" role="button"
