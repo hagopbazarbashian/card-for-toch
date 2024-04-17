@@ -59,7 +59,8 @@
                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
                 </span>
              </div>
-             <h4 class="price mt-3 mb-0">{{$newproduct->symbole}}{{$newproduct->discount == null ?  : $newproduct->price}}</h4>
+             <h4 class="price mypriceee mt-3 mb-0" value="{{$newproduct->discount ? $newproduct->discount : $newproduct->discount}}">{{$newproduct->symbole}}{{$newproduct->discount == null ? $newproduct->price : $newproduct->discount}}</h4>
+             <input type="hidden" class="my-product-id" value="{{$newproduct->id}}">
              <h4 class="ms-2 sale-price mt-3 mb-0"></h4>
              <p class="mt-4 mb-0">{{$newproduct->description}}</p>
              <div class="add-product-wrapper mt-5 pb-5">
@@ -350,4 +351,6 @@
        </div>
     </div>
  </div>
+ <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ <script src="{{ asset('shop/assets/js/ajax-single-page-product.js') }}"></script>
 @endsection

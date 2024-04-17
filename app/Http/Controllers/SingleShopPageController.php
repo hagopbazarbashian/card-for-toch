@@ -6,16 +6,31 @@ use Illuminate\Http\Request;
 use App\Models\newproduct;
 use App\Models\photo;
 
-class SingleShopPageController extends Controller 
+class SingleShopPageController extends Controller
 {
      public function index($id){
         try {
             $newproduct = newproduct::with('photo')->findOrFail($id);
             $newproductalls = newproduct::with('photo')->get();
+
+            $newproduct = newproduct::craete([
+                'newproduct_id'=>$id,
+                'quantity'=>'1',
+
+            ]);
             return view('single-shop-page',compact('newproduct','newproductalls'));
         } catch (\Throwable $th) {
            return redirect()->back()->with('error' , 'Error');
         }
 
+     }
+
+
+     public function quantityprocesssyatemstore(Request $request){
+        $quantity = $request->formData;
+        $price = $request->price;
+
+        $total = $quantity * $price ;
+        dd($total);
      }
 }

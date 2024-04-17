@@ -50,6 +50,8 @@ Route::get('view-all' , [ViewAllProductController::class , 'index'])->name('view
 Route::post('/add' , [ShopCardController::class , 'addToCart']);
 Route::post('/update-price' , [ShopCardController::class , 'updatepricecard']);
 Route::get('single-card/{id}' , [SingleShopPageController::class , 'index'])->name('single_card');
+//quantity process ajax
+Route::post('quantity-process' ,[SingleShopPageController::class  , 'quantityprocesssyatemstore']);
 //End Shop Page System
 //////////////////////////////////
 

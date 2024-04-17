@@ -16,6 +16,13 @@ return new class extends Migration
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('newproduct_id');
+            $table->string('name')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('company')->nullable();
+            $table->string('city')->nullable();
+            $table->string('phonenumber')->nullable();
+            $table->string('email')->nullable();
+            $table->string('additionalinformation')->nullable();
             $table->string('quantity')->default('1');
             $table->string('price');
             $table->string('status')->default('0');
