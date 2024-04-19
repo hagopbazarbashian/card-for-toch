@@ -11,6 +11,20 @@
     /* .iq-custom-tab.nav-pills .nav-item .nav-link.active{
         :#68b7e2 !important;
     } */
+    /* .hidden {
+        display: none !important;
+    } */
+
+    .show {
+        display: block !important; /* or any appropriate display property */
+    }
+    #displayedsymbole,
+    #displayedPrice {
+    display: inline; /* or inline-block */
+    }
+    .iq-custom-tab.nav-pills .nav-item .nav-link::before{
+        background: linear-gradient(0deg, rgba(var(229, 9, 20), 0) 0, rgba(var(229, 9, 20), 0.3) 85%);
+    }
 </style>
 <div class="section-padding-top product-detail">
     <div class="container">
@@ -59,7 +73,13 @@
                    <i class="fa fa-star text-warning" aria-hidden="true"></i>
                 </span>
              </div>
-             <h4 class="price mypriceee mt-3 mb-0" value="{{$newproduct->discount ? $newproduct->discount : $newproduct->discount}}">{{$newproduct->symbole}}{{$newproduct->discount == null ? $newproduct->price : $newproduct->discount}}</h4>
+             <h4 class="price priceajax mypriceee mt-3 mb-0">{{$newproduct->symbole}}{{$checkout->price}}</h4>
+
+             <h4 class="price mypriceee mt-3 mb-0">
+                <span id="displayedsymbole"></span><span id="displayedPrice"></span>
+            </h4>
+
+             {{-- <p>Price: <span id="displayedPrice">Initial Price</span></p> --}}
              <input type="hidden" class="my-product-id" value="{{$newproduct->id}}">
              <h4 class="ms-2 sale-price mt-3 mb-0"></h4>
              <p class="mt-4 mb-0">{{$newproduct->description}}</p>
@@ -72,7 +92,7 @@
                                <path d="M5.22727 0.886364H0.136364V2.13636H5.22727V0.886364Z" fill="currentColor"></path>
                             </svg>
                          </button>
-                         <input type="text" class="btn nm btn-sm btn-outline-light input-display border-0" data-qty="input" pattern="^(0|[1-9][0-9]*)$" minlength="1" maxlength="2" value="1" title="Qty" />
+                         <input type="text" class="btn nm btn-sm btn-outline-light input-display border-0" data-qty="input" pattern="^(0|[1-9][0-9]*)$" minlength="1" maxlength="2" value="{{$checkout->quantity}}" title="Qty" />
                          <button type="button" class="btn btn-sm btn-outline-light iq-quantity-plus text-white border-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8" viewBox="0 0 9 8" fill="none">
                                <path d="M3.63636 7.70455H4.90909V4.59091H8.02273V3.31818H4.90909V0.204545H3.63636V3.31818H0.522727V4.59091H3.63636V7.70455Z" fill="currentColor"></path>
@@ -136,7 +156,7 @@
                  <a href="javascript:void(0)" class="nav-link bg-transparent" data-bs-toggle="tab" data-bs-target="#reviews" role="tab" aria-selected="false">Reviews</a>
               </li>
            </ul>
-           <div class="tab-content" id="product-tab-content">
+           <div class="tab-content" id="product-tab-content" style="margin: 12px;">
               <div class="tab-pane fade show active" id="description" role="tabpanel">
                  <p class="m-0">
                     {{$newproduct->description}}
@@ -290,7 +310,7 @@
           <div class="overflow-hidden">
              <div class="d-flex align-items-center justify-content-between px-3 my-4">
                 <h5 class="main-title text-capitalize mb-0">Related Products</h5>
-                <a href="shop/view-all-product.html" class="iq-view-all text-decoration-none flex-none" style="color:#68b7e2" >Want More?</a>
+                <a href="{{route('view_all')}}" class="iq-view-all text-decoration-none flex-none" style="color:#68b7e2" >Want More?</a>
              </div>
              <div class="card-style-slider">
                 <div class="position-relative swiper swiper-card" data-slide="4" data-laptop="4" data-tab="3" data-mobile="2" data-mobile-sm="2" data-autoplay="true" data-loop="true" data-navigation="true" data-pagination="true">
@@ -305,7 +325,7 @@
                             @endif
                            @foreach ($newproductall->photo->take(1) as $photo)
                            <div class="image-wrap">
-                               <a href="#">
+                               <a href="{{route('single_card',$newproductall->id)}}">
                                 <div class="product-image">
                                     <img src="{{ asset('product-images/' . $photo->photo) }}" class="img-fluid w-100" alt="productImg-01" loading="lazy" />
                                    </div>
@@ -314,13 +334,17 @@
                            @endforeach
                            <div class="product-caption">
                               <h5 class="product__title">
-                                 <a href="#" class="title-link"> {{$newproductall->title}}</a>
+                                 <a href="{{route('single_card',$newproductall->id)}}" class="title-link"> {{$newproductall->title}}</a>
                               </h5>
-                              <div class="price-detail">
-                                 <div class="price">
-                                    {!! $newproductall->discount ? '<del>' . $newproductall->symbole . $newproductall->discount . '</del>' . $newproductall->symbole . $newproductall->price : $newproductall->symbole . $newproductall->price !!}
-                                 </div>
-                              </div>
+                                @if (isset($newproductall->discount))
+                                <div class="price-detail">
+                                    <div class="price"><del>{{$newproductall->symbole}}{{$newproductall->price}}</del>{{$newproductall->symbole}}{{$newproductall->discount}}</div>
+                                </div>
+                                @else
+                                <div class="price-detail">
+                                    <div class="price">{{$newproductall->symbole}}{{$newproductall->price}}</div>
+                                </div>
+                                @endif
                               <div class="container-rating">
                                  <div class="star-rating text-primary">
                                     <span>

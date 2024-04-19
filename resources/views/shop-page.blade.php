@@ -2,9 +2,14 @@
 @section('title'){{ 'Shop Page' }}@endsection
 @section('home')
 <section class="showcase">
-    <div class="video-container">
-        <video src="https://woolyss.com/f/vp9-vorbis-spring.webm" autoplay muted loop></video>
+    <div class="video-container desktop">
+        <video src="{{ asset('shop/assets/images/mainmotionn.mp4') }}" autoplay muted loop></video>
     </div>
+
+    <div class="video-container mobile">
+        <video  style="width: 200px;"src="{{ asset('shop/assets/images/mainmotionn_1_mobile.mp4') }}" autoplay muted loop></video>
+    </div>
+
     <div class="content">
         <h1>CONNECT SMART. NOT HARDER</h1>
         <h3>THE FUTURE OF NETWORKING</h3>
@@ -271,43 +276,42 @@
        </article>
     </a>
 
-    <a href="#">
+    <a href="https://toch.am/register-user">
        <article class="card">
           <img src="https://v1ce.co/cdn/shop/files/V1CE-Shopify--3_45a4821f-7724-405a-9c60-aca328c10d1a.jpg?v=1683381420&width=1300" alt="October Logo" />
           <div class="info">
              <h2>
-                October 2021
+                Step 2
              </h2>
              <h3>
-                The first proper month of study
+
              </h3>
-             <br />
              <p>
-                There are six months between October and April which is perfect for me.
+                Create Your Free Profile Add new card to your profile and upload all your contact information, social media, brand logo, price list and more.
              </p>
           </div>
        </article>
     </a>
 
-    <a href="#">
+    <a href="https://toch.am/faq">
        <article class="card">
           <img src="https://v1ce.co/cdn/shop/files/V1CE-Table-Talkers-0018.jpg?v=1691439154&width=1300" alt="November Logo" />
           <div class="info">
              <h2>
-                November 2021
+                Step 2
              </h2>
              <h3>
-                Getting into a groove
+
              </h3>
-             <br />
              <p>
-                I'm really starting to get exposed to some of the good stuff and I'm enjoying the CSS even more.
+                Start Networking New youcan share all your information to others with just a touch! Need help? See our FAQ
+
              </p>
           </div>
        </article>
     </a>
 
-    <a href="#">
+    {{-- <a href="#">
        <article class="card">
           <img src="https://v1ce.co/cdn/shop/files/bundles_square_compressed.png?v=1694598372&width=600" alt="December Logo" />
           <div class="info">
@@ -323,7 +327,7 @@
              </p>
           </div>
        </article>
-    </a>
+    </a> --}}
 
 
 

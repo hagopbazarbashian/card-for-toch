@@ -1,4 +1,17 @@
-
+<style>
+    .navbar-brand img.logo{
+    height: 5.375rem !important;
+    max-height: 4.375rem !important;
+   }
+   @media only screen and (max-width: 767px) {
+    .navbar-brand img.logo{
+     height: 5.375rem !important;
+     max-height: 4.375rem !important;
+     position: relative;
+     top: 21px;
+    }
+   }
+</style>
 <header class="header-center-home header-merchandise">
     <div class="header-top d-xl-block d-none">
         <div class="container-fluid">
@@ -6,22 +19,22 @@
                 <div class="col-md-3 d-flex justify-content-center">
                     <!--Logo -->
                     <div class="logo-default">
-                        <a class="navbar-brand text-primary" href="#">
+                        <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-hotstar">
-                        <a class="navbar-brand text-primary" href="#">
+                        <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-prime">
-                        <a class="navbar-brand text-primary" href="#">
+                        <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
                     <div class="logo-hulu">
-                        <a class="navbar-brand text-primary" href="#">
+                        <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                         </a>
                     </div>
@@ -98,22 +111,22 @@
                         </div>
                        <!--Logo -->
                         <div class="logo-default">
-                            <a class="navbar-brand text-primary" href="./index.html">
+                            <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                             </a>
                         </div>
                         <div class="logo-hotstar">
-                            <a class="navbar-brand text-primary" href="./index.html">
+                            <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                             </a>
                         </div>
                         <div class="logo-prime">
-                            <a class="navbar-brand text-primary" href="./index.html">
+                            <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                             </a>
                         </div>
                         <div class="logo-hulu">
-                            <a class="navbar-brand text-primary" href="./index.html">
+                            <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                             </a>
                         </div>
@@ -125,22 +138,22 @@
                           <div class="navbar-brand ms-3">
                             <!--Logo -->
                             <div class="logo-default">
-                                <a class="navbar-brand text-primary" href="./index.html">
+                                <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                     <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                                 </a>
                             </div>
                             <div class="logo-hotstar">
-                                <a class="navbar-brand text-primary" href="./index.html">
+                                <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                     <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                                 </a>
                             </div>
                             <div class="logo-prime">
-                                <a class="navbar-brand text-primary" href="./index.html">
+                                <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                     <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                                 </a>
                             </div>
                             <div class="logo-hulu">
-                                <a class="navbar-brand text-primary" href="./index.html">
+                                <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                                     <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                                 </a>
                             </div>

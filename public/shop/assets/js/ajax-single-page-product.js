@@ -29,7 +29,13 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 // Handle success response
-                console.log(response);
+                $('#displayedQuantity').text(response.quantity);
+                $('#displayedPrice').text(response.price);
+                $('#displayedsymbole').text(response.symbole);
+
+
+
+                $('.priceajax').hide(); // Hide the price element with class 'price'\
             },
             error: function(xhr, status, error) {
                 // Handle error

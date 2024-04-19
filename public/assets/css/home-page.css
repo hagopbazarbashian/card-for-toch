@@ -24,7 +24,7 @@ h1 {
 	justify-content: center;
 	text-align: center;
 	color: #fff;
-	padding: 0 20px; 
+	padding: 0 20px;
 }
 
 .video-container {
@@ -42,7 +42,7 @@ h1 {
 	min-width: 100%;
 	min-height: 100%;
   position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	object-fit: cover;
@@ -61,7 +61,7 @@ h1 {
 
 .content {
 	z-index: 2;
-  
+
 }
 
 .btn {
@@ -302,8 +302,8 @@ h1 {
     font-size: 1em;
   }
   .content {
-	    z-index: 2;  
-      margin: 174px 0 0 0;
+	    z-index: 2;
+      margin: 384px 0 0 0;
   }
 }
 
@@ -419,7 +419,7 @@ h1 {
     right: 0;
     padding: 0.5rem;
     background: none;
-    border: none;  
+    border: none;
     cursor: pointer;
     font-size: 1.5rem;
     color: inherit;
@@ -450,5 +450,23 @@ h1 {
 
     .map {
         height: 100%; /* Reset height to 100% */
+    }
+}
+
+.video-container {
+    display: none; /* Hide by default */
+}
+
+/* Show video container for desktop */
+@media only screen and (min-width: 768px) {
+    .video-container.desktop {
+        display: block; /* Show for desktop */
+    }
+}
+
+/* Show video container for mobile */
+@media only screen and (max-width: 767px) {
+    .video-container.mobile {
+        display: block; /* Show for mobile */
     }
 }
