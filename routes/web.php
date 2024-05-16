@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopPageController;
 use App\Http\Controllers\ShopCardController;
 use App\Http\Controllers\ViewAllProductController;
 use App\Http\Controllers\SingleShopPageController;
+use App\Http\Controllers\ShopAddTocartController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -52,7 +53,8 @@ Route::post('/update-price' , [ShopCardController::class , 'updatepricecard']);
 Route::get('single-card/{id}' , [SingleShopPageController::class , 'index'])->name('single_card');
 //quantity process ajax
 Route::post('quantity-process' ,[SingleShopPageController::class  , 'quantityprocesssyatemstore']);
-//End Shop Page System
+Route::resource('add-shop-card', ShopAddTocartController::class);
+//End Shop Page System  
 //////////////////////////////////
 
 Route::middleware(['admin:admin'])->group(function () {

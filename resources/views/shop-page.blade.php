@@ -3,13 +3,8 @@
 @section('home')
 <section class="showcase">
     <div class="video-container desktop">
-        <video src="{{ asset('shop/assets/images/mainmotionn.mp4') }}" autoplay muted loop></video>
+        <video src="{{ asset('shop/assets/images/mainmotionn_1_mobile.mp4') }}" autoplay muted loop></video>
     </div>
-
-    <div class="video-container mobile">
-        <video  style="width: 200px;"src="{{ asset('shop/assets/images/mainmotionn_1_mobile.mp4') }}" autoplay muted loop></video>
-    </div>
-
     <div class="content">
         <h1>CONNECT SMART. NOT HARDER</h1>
         <h3>THE FUTURE OF NETWORKING</h3>
@@ -60,7 +55,7 @@
     </div>
  </section> --}}
 
- <section class="">
+ <section class="mobile">
     <div class="container-fluid p-xl-0">
        <div class="row gx-lg-0">
           <div class="col-lg-4 col-md-6 d-flex flex-column">
@@ -329,17 +324,7 @@
        </article>
     </a> --}}
 
-
-
-
-
-
-
-
  </main>
-
-
-
 
  <!-- Include jQuery from CDN -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

@@ -39,12 +39,12 @@ h1 {
 }
 
 .video-container video {
-	min-width: 100%;
+	min-width: 50%;
 	min-height: 100%;
   position: absolute;
 	top: 40%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -27%);
 	object-fit: cover;
 }
 
@@ -303,7 +303,7 @@ h1 {
   }
   .content {
 	    z-index: 2;
-      margin: 384px 0 0 0;
+      margin: 744px 0 0 0;
   }
 }
 
@@ -453,20 +453,22 @@ h1 {
     }
 }
 
-.video-container {
-    display: none; /* Hide by default */
-}
-
-/* Show video container for desktop */
-@media only screen and (min-width: 768px) {
-    .video-container.desktop {
-        display: block; /* Show for desktop */
-    }
-}
 
 /* Show video container for mobile */
 @media only screen and (max-width: 767px) {
-    .video-container.mobile {
-        display: block; /* Show for mobile */
+    .video-container video{
+      width: 500px;
+      min-width: 20%;
+      min-height: 100%;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -27%);
+      object-fit: cover;
     }
+
+    .mobile{
+        margin: 365px 0 0 0;
+    }
+
 }

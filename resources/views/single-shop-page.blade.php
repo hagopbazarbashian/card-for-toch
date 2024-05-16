@@ -23,7 +23,13 @@
     display: inline; /* or inline-block */
     }
     .iq-custom-tab.nav-pills .nav-item .nav-link::before{
-        background: linear-gradient(0deg, rgba(var(229, 9, 20), 0) 0, rgba(var(229, 9, 20), 0.3) 85%);
+      background: linear-gradient(0deg, #68b7e2, rgba(67, 96, 173, 0.3)) !important;
+    }
+    .iq-custom-tab.nav-pills .nav-item .nav-link.active{
+      color: #fff !important;
+    }
+    .iq-custom-tab.nav-pills .nav-item .nav-link::after{
+      background: rgba(67, 96, 173, 0.3) !important;
     }
 </style>
 <div class="section-padding-top product-detail">
@@ -107,7 +113,7 @@
                    </li>
                    <li>
                       <div class="iq-button">
-                         <a href="#" class="btn btn-sm cart-btn text-uppercase position-relative">
+                         <a href="{{route('add-shop-card.edit',$checkout->newproduct_id)}}" class="btn btn-sm cart-btn text-uppercase position-relative">
                             <span class="button-text">Add to Cart</span>
                             <i class="fa-solid fa-play"></i>
                          </a>
@@ -375,6 +381,7 @@
        </div>
     </div>
  </div>
+
  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
  <script src="{{ asset('shop/assets/js/ajax-single-page-product.js') }}"></script>
 @endsection
