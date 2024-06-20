@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin\Shop;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\newproduct;
-use App\Models\color;
-use App\Models\photo;
 
 
 class AddNewcardController extends Controller
@@ -20,7 +18,7 @@ class AddNewcardController extends Controller
     {
         try {
 
-          $newproducts = newproduct::with('photo')->orderBy('created_at', 'desc')->get();
+          $newproducts = newproduct::first();
           return view('Admin.shop.add-product.product-index',compact('newproducts'));
 
         } catch (\Exception $e) {
@@ -38,8 +36,7 @@ class AddNewcardController extends Controller
     public function create()
     {
         try {
-          $colors = color::get();
-          return view('Admin.shop.add-product.product-create',compact('colors'));
+          return view('Admin.shop.add-product.product-create');
 
         } catch (\Exception $e) {
 
@@ -56,48 +53,36 @@ class AddNewcardController extends Controller
      */
     public function store(Request $request)
     {
-        // try {
-            $request->validate([
-              'photos.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-              'title'=>'required',
-              'description'=>'required | max:250',
-              'price'=>'required',
-              'symbole'=>'required',
-            ]);
-
-            $newproduct = newproduct::create([
-                'title'=>$request->title,
-                'description' =>$request->description,
-                'color_id' => json_encode($request->color_id),
-                'price' => $request->price,
-                'symbole' => $request->symbole,
-                'discount' => $request->discount,
-            ]);
-
-            $uploadedPhotos = [];
- 
-            if ($request->hasFile('photo')) {
-                foreach ($request->file('photo') as $photo) {
+            // try {
+                $request->validate([
+                    'photo' => 'required',
+                    'title' => 'required',
+                    'description' => 'required|max:250',
+                    'price' => 'required',
+                    'symbole' => 'required',
+                ]);
+            
+                $photoFileName = null; // Initialize the variable
+            
+                if ($request->hasFile('photo')) {
+                    $photo = $request->file('photo');
                     $photoFileName = $photo->hashName();
-                    $destinationPath = public_path('product-images');
+                    $destinationPath = public_path('productimages');
                     $photo->move($destinationPath, $photoFileName);
-
-                    $uploadedPhotos[] = [
-                        'newproduct_id' => $newproduct->id,
-                        'photo' => $photoFileName,
-                    ];
                 }
-            }
-              // Save multiple photos in the database
-              photo::insert($uploadedPhotos);
-
-              return redirect()->route('add-new-card.index')->with('succes', 'Your product Successfully Created.');
-
-
-                //   } catch (\Exception $e) {
-
-                //       return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
-                //   }
+            
+                $newproduct = newproduct::create([
+                    'title' => $request->title,
+                    'description' => $request->description,
+                    'price' => $request->price,
+                    'symbole' => $request->symbole,
+                    'photo' => $photoFileName,
+                ]);
+            
+                return redirect()->route('add-new-card.index')->with('success', 'Your product was successfully created.');
+                // } catch (\Exception $e) {
+                //     return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
+                // }
             }
 
     /**

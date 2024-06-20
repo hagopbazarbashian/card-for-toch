@@ -18,35 +18,17 @@
                 </div>
              </div>
              <div class="d-flex flex-wrap justify-content-center" >
-                @if (isset($newproducts))
-                @foreach ($newproducts as $newproduct)
                 <div class="" style="width:50%;">
                     <div class="card">
-                        @if($newproduct->photo->isNotEmpty())
-                            @foreach($newproduct->photo as $photo)
-                                <img src="{{ asset('product-images/' . $photo->photo) }}" class="card-img-top" alt="Card Image">
-                            @endforeach
-                        @else
+                            <img src="{{ asset('productimages/'.$newproducts->photo ?? null) }}" class="card-img-top" alt="Card Image">
                             <!-- You can add a default image or handle the case where no images are available -->
-                            <img src="{{ asset('path/to/default/image.jpg') }}" class="card-img-top" alt="Default Image">
-                        @endif
-                        <div class="card-body">
-                            @php
-                            $colorData = json_decode($newproduct->color_id);
-                            @endphp
-                            @if(isset($colorData) && is_array($colorData))
-                                @foreach ($colorData as $colorCode)
-                                    <div style="width: 50px; height: 50px; background-color: {{ $colorCode }}; border-radius: 10px;"></div>
-                                @endforeach
-                            @else
-                                <!-- Handle the case where colors is not available or not in the expected format -->
-                            @endif
-                            <h5 class="card-title">{{ $newproduct->title }}</h5>
-                            <p class="card-text">{{ $newproduct->description }}</p>
-                            <p class="card-text">{{ $newproduct->price }} {{ $newproduct->symbole }}</p>
-                            <a href="{{route('add-new-card.edit',$newproduct->id)}}" class="btn btn-primary">Edit</a>
+                            <div class="card-body">
+                            <h5 class="card-title">{{ $newproducts->title ?? null }}</h5>
+                            <p class="card-text">{{ $newproducts->description ?? null}}</p>
+                            <p class="card-text">{{ $newproducts->price ?? null }} {{ $newproducts->symbole ?? null}}</p>
+                            <a href="" class="btn btn-primary">Edit</a>
 
-                            <form action="{{route('add-new-card.destroy',$newproduct->id)}}" method="post"><br>
+                            <form action="#" method="post"><br>
                                 @csrf
                                 @method('DELETE')
                                 <button  class="btn btn-primary" >
@@ -56,8 +38,6 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-                @endif
             </div>
           </div>
        </div>

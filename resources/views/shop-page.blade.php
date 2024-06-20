@@ -15,7 +15,7 @@
                 <i class="fa-solid fa-play"></i>
             </a>
              <a href="" class="btn text-uppercase position-relative">
-                <span class="button-text">LOGIN</span>
+                <span class="button-text">LOGIN TO CARD</span>
                 <i class="fa-solid fa-play"></i>
             </a>
         </div>
@@ -51,115 +51,50 @@
           </ul>
           <div class="swiper-button swiper-button-next"></div>
           <div class="swiper-button swiper-button-prev"></div>
-       </div>
+       </div>  
     </div>
  </section> --}}
 
- <section class="mobile">
-    <div class="container-fluid p-xl-0">
-       <div class="row gx-lg-0">
-          <div class="col-lg-4 col-md-6 d-flex flex-column">
-             <div class="product-box left-1-productbox">
-                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay" style="background-image: url({{ asset('product-images/' . $newproductszoom1->photo[0]->photo) }});"></div>
-                <div class="card-body w-100">
-                   <h4 class="parent-heading">{{$newproductszoom1->title}}</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
+ <section class="mobile py-4">
+   <div class="container-fluid p-xl-0">
+       <div class="row gx-3">
+           @foreach($newproducts as $item)
+               <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                   <div class="card h-100 shadow-sm border-0">
+                       <img src="{{ asset('productimages/'.$item->photo) }}" class="card-img-top" alt="Photo of {{ $item->description }}">
+                       <div class="card-body d-flex flex-column">
+                           <h5 class="card-title">{{ $item->description }}</h5>
+                           <p class="card-text text-muted">{{ $item->price }} USD</p>
+                           <a href="#" class="btn btn-outline-primary mt-auto">View Details</a>
+                       </div>
                    </div>
-                </div>
-             </div>
-             {{-- <div class="product-box left-2-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url(./assets/images/shop/card/02.webp);"></div>
-                <div class="card-body w-100">
-                   <h5 class="card-title">Harry David</h5>
-                   <h4 class="parent-heading">Warner Bro Films</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div> --}}
-          </div>
-          {{--
-          <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-             <div class="center-productbox product-box">
-                <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay" style="background-image: url(./assets/images/shop/card/03.webp);"></div>
-                <div class="card-body w-100">
-                   <h5 class="card-title">Avengers</h5>
-                   <h4 class="parent-heading">Marvel Studios</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div>
-          </div>
-          --}}
-          <div class="col-lg-4 col-md-12 d-flex flex-column mt-lg-0 mt-md-4 mt-4">
-             <div class="product-box right-1-productbox">
-                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay md-mt-5" style="background-image: url({{ asset('product-images/' . $newproductszoom2->photo[0]->photo) }});"></div>
-                <div class="card-body w-100">
-                   <h4 class="parent-heading">{{$newproductszoom2->title}}</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div>
-             {{-- <div class="product-box right-2-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url(./assets/images/shop/card/05.webp);"></div>
-                <div class="card-body w-100">
-                   <h5 class="card-title">Fantasia</h5>
-                   <h4 class="parent-heading">Disney World</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div> --}}
-          </div>
-          <div class="col-lg-4 col-md-12 d-flex flex-column mt-lg-0 mt-md-4 mt-4">
-             {{-- <div class="product-box right-1-productbox">
-                <a href="./shop/shop.html" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay md-mt-5" style="background-image: url(./assets/images/shop/card/04.webp);"></div>
-                <div class="card-body w-100">
-                   <h5 class="card-title">Harry David</h5>
-                   <h4 class="parent-heading">Warner Bros Films</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div> --}}
-             <div class="product-box right-2-productbox">
-                <a href="{{route('single_card',$newproductszoom1->id)}}" class="card-link"></a>
-                <div class="card-img-overlay product-card-img-overlay mt-lg-0 mt-md-4 mt-4" style="background-image: url({{ asset('product-images/' . $newproductszoom3->photo[0]->photo) }});"></div>
-                <div class="card-body w-100">
-                   <h4 class="parent-heading">{{$newproductszoom3->title}}</h4>
-                   <div class="iq-button link-button">
-                      <a href="" class="btn text-capitalize position-relative">
-                         <span class="button-text" style="color:#68b7e2">Shop Now</span>
-                      </a>
-                   </div>
-                </div>
-             </div>
-          </div>
+               </div>
+           @endforeach
        </div>
-    </div>
- </section>
+   </div>
+</section>
 
+<style>
+   .card {
+       border-radius: 10px;
+       overflow: hidden;
+   }
+   .card-img-top {
+       object-fit: cover;
+   }
+   .card-body {
+       display: flex;
+       flex-direction: column;
+   }
+   .btn-outline-primary {
+       border-color: #007bff;
+       color: #007bff;
+   }
+   .btn-outline-primary:hover {
+       background-color: #007bff;
+       color: #fff;
+   }
+</style>
 {{-- <div class="newest-product-block section-padding-top">
     <div class="container-fluid">
        <div class="overflow-hidden">

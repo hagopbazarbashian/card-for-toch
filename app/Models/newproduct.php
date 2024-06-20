@@ -10,10 +10,9 @@ class newproduct extends Model
     protected $fillable = [
         'title',
         'description',  
-        'color_id',
         'price', 
-        'discount',
         'symbole',
+        'photo',
         'status'
     ];
 

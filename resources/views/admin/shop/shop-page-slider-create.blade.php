@@ -7,7 +7,7 @@
         <div class="row justify-content-center align-items-center height-self-center vh-100">
             <div class="col-lg-8 col-md-12 align-self-center">
                 <form action="{{route('shop-slider.store')}}" method="post" id="createForm" enctype="multipart/form-data">
-                    @csrf
+                    @csrf   
                     <div class="user-login-card bg-body">
                         <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-5">
                             <div class="col">
