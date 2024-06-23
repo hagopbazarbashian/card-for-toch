@@ -21,6 +21,7 @@ class ShopPageController extends Controller
 
             $shopcardscount = shopcard::where('user_session', $userSession)->count();  
             $shopsliders = shopslider::orderBy('created_at', 'desc')->get();
+
             $newproducts = newproduct::get();
             return view('shop-page' ,compact('shopsliders',
             'newproducts',

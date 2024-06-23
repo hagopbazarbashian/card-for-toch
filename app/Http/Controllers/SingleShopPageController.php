@@ -5,29 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\newproduct;
 use App\Models\checkout;
-use App\Models\photo;
 
 class SingleShopPageController extends Controller
 {
      public function index($id){
         try {
-            $newproduct = newproduct::with('photo')->findOrFail($id);
-            $newproductalls = newproduct::with('photo')->get();
-            $checkout = checkout::where('newproduct_id' ,$id)->first();
 
-            if($checkout){
+            $newproductalls = newproduct::find($id);
+            $newproductallsall = newproduct::get();
+            
+            return view('single-shop-page',compact('newproductalls','newproductallsall'));
 
-            }else{
-                $checkout = checkout::create([
-                    'newproduct_id'=>$id,
-                    'quantity'=>'1',
-                    'fixprice'=>$newproduct->discount ? $newproduct->price - $newproduct->discount : $newproduct->price,
-                    'price'=>$newproduct->discount ? $newproduct->price - $newproduct->discount : $newproduct->price,
-                    'symbole'=>$newproduct->symbole
-                ]);
-            }
-
-            return view('single-shop-page',compact('newproduct','newproductalls' ,'checkout'));
         } catch (\Throwable $th) {
            return redirect()->back()->with('error' , 'Error');
         }

@@ -12,7 +12,12 @@
   @include('layout.style-shop')
 
 </head>
-
+<style>
+  .bg-primary{
+    --bs-bg-opacity: 1;
+    background-color: #68b7e2 !important;
+  }
+</style>
 <body class="  ">
   <span class="screen-darken"></span>
   {{-- <div class="loader simple-loader">

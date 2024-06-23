@@ -65,14 +65,19 @@
                                 <input type="file" name="photo" class="form-control rounded-0" multiple />
                             </div>
                             <div class="col">
-                                <label class="text-white fw-500 mb-2">Title</label>
+                                <label class="text-white fw-500 mb-2">Title</label> 
                                 <input type="text" name="title" class="form-control rounded-0" value="{{ old('title') }}" />
+                            </div>
+                            <div class="col">
+                                <label class="text-white fw-500 mb-2">Fee</label>
+                                <input type="text" name="fee" class="form-control rounded-0" value="{{ old('title') }}" />
                             </div>
                             <div class="col">
                                 <select  name="symbole" class="form-select" aria-label="Default select example">
                                     <option value="$">$</option> <!-- &#36; is the HTML entity for dollar sign ($) -->
                                     <option value="£">£</option> <!-- &#163; is the HTML entity for pound sign (£) -->
                                     <option value="€">€</option> <!-- &#8364; is the HTML entity for euro sign (€) -->
+                                    <option value="Դ">Դ</option> <!-- &#8364; is the HTML entity for euro sign (Դ) -->
                                 </select>
                             </div>
 

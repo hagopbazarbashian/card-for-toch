@@ -7,6 +7,7 @@ use App\Http\Controllers\ShopCardController;
 use App\Http\Controllers\ViewAllProductController;
 use App\Http\Controllers\SingleShopPageController;
 use App\Http\Controllers\ShopAddTocartController;
+use App\Http\Controllers\ShopInfoController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\Admin\Shop\ShopSliderController;
 use App\Http\Controllers\Admin\Shop\AddNewcardController;
 use App\Http\Controllers\Admin\Shop\ColorController;
 use App\Http\Controllers\Admin\User\AdminUserController;
+use App\Http\Controllers\Admin\Shop\AdminBobusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +49,7 @@ Route::get('view-all' , [ViewAllProductController::class , 'index'])->name('view
 //Shop card
 
 //////////////////////////////////
-//End Shop card System
+//End Shop card System 
 Route::post('/add' , [ShopCardController::class , 'addToCart']);
 Route::post('/update-price' , [ShopCardController::class , 'updatepricecard']);
 Route::get('single-card/{id}' , [SingleShopPageController::class , 'index'])->name('single_card');
@@ -56,6 +58,10 @@ Route::post('quantity-process' ,[SingleShopPageController::class  , 'quantitypro
 Route::resource('add-shop-card', ShopAddTocartController::class);
 //End Shop Page System  
 //////////////////////////////////
+
+//////////////////////////////////
+//Shop Card Info
+Route::get('checkout/{id}' , [ShopInfoController::class , 'index'])->name('checkout');
 
 Route::middleware(['admin:admin'])->group(function () {
     Route::get('admin_home' , [AdminHomeController::class , 'index'])->name('admin_home');
@@ -81,6 +87,9 @@ Route::middleware(['admin:admin'])->group(function () {
     Route::resource('add-new-card', AddNewcardController::class);
     //Add Color
     Route::resource('color', ColorController::class);
+
+    //coupon System
+    Route::resource('coupon', AdminBobusController::class);
 
     // track-visitor
     Route::group(['middleware' => 'trackVisitor'], function () {

@@ -36,63 +36,7 @@
        <div class="sidebar-list">
           <!-- Sidebar Menu Start -->
           <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
-             <li class="nav-item">
-               <a class="nav-link {{ request()->routeIs('admin_home') ? 'active' : '' }}" href="{{ route('admin_home') }}">
-                  <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                      <i class="fas fa-home"></i> <!-- Font Awesome subscribe (rss) icon -->
-                  </i>
-                  <span class="item-name">Home</span>
-               </a>
-                <a class="nav-link {{ request()->routeIs('user-admin.index') ? 'active' : '' }}" href="{{ route('user-admin.index') }}">
-                   <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                      <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z" fill="currentColor"></path>
-                         <path
-                            opacity="0.4"
-                            d="M11.9971 12.5838C14.9351 12.5838 17.2891 10.2288 17.2891 7.29176C17.2891 4.35476 14.9351 1.99976 11.9971 1.99976C9.06008 1.99976 6.70508 4.35476 6.70508 7.29176C6.70508 10.2288 9.06008 12.5838 11.9971 12.5838Z"
-                            fill="currentColor"
-                         ></path>
-                      </svg>
-                   </i>
-                   <span class="item-name">Users</span>
-                </a>
-                <a class="nav-link {{ request()->routeIs('user_card') ? 'active' : '' }}" href="{{ route('user_card') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-id-card"></i> <!-- Font Awesome card icon -->
-                    </i>
-                    <span class="item-name">Card User</span>
-                </a>
-                {{-- <a class="nav-link {{ request()->routeIs('admin_subscribe') ? 'active' : '' }}" href="{{ route('admin_subscribe') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-rss"></i> <!-- Font Awesome subscribe (rss) icon -->
-                    </i>
-                    <span class="item-name">Subscribe</span>
-                </a> --}}
-                <a class="nav-link {{ request()->routeIs('create-acount.index') ? 'active' : '' }}" href="{{ route('create-acount.index') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-plus"></i> <!-- Font Awesome subscribe (rss) icon -->
-                    </i>
-                    <span class="item-name">Create New acount</span>
-                </a>
-                <a class="nav-link {{ request()->routeIs('create-acount.create') ? 'active' : '' }}" href="{{ route('create-acount.create') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-eye"></i> <!-- Font Awesome subscribe (rss) icon -->
-                    </i>
-                    <span class="item-name">Show Admin Create User</span>
-                </a>
-                 <a class="nav-link {{ request()->routeIs('monthly_statistics') ? 'active' : '' }}" href="{{ route('monthly_statistics') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-bar-chart"></i> <!-- Font Awesome subscribe (rss) icon -->
-                    </i>
-                    <span class="item-name">Monthly visitor</span>
-                </a>
-                 <a class="nav-link {{ request()->routeIs('activ_card') ? 'active' : '' }}" href="{{ route('activ_card') }}">
-                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fas fa-id-card"></i> <!-- Font Awesome subscribe (rss) icon -->
-                    </i>
-                    <span class="item-name">Activ Card</span>
-                </a>
-             </li> <br><br>
+            
               {{-- Start Shop --}}
              <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('shop-slider.index') ? 'active' : '' }}" href="{{route('shop-slider.index')}}">
@@ -106,7 +50,7 @@
                       </svg>
                    </i>
                    <span class="item-name">Shop Slider</span>
-                </a>
+                </a> 
              </li>
              <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('add-new-card.index') ? 'active' : '' }}" href="{{route('add-new-card.index')}}">
@@ -117,35 +61,13 @@
                 </a>
              </li>
              <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('color.index') ? 'active' : '' }}" href="{{route('color.index')}}">
+                <a class="nav-link {{ request()->routeIs('coupon.index') ? 'active' : '' }}" href="{{route('coupon.index')}}">
                     <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
-                        <i class="fa-solid fa-droplet"></i>
+                        <i class="fas fa-gift"></i> <!-- Font Awesome subscribe (rss) icon -->
                     </i>
-                   <span class="item-name">Add New Color</span>
+                   <span class="item-name">Coupon</span>
                 </a>
              </li>
-             {{-- {{-- <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#sidebar-Shows" role="button" aria-expanded="false" aria-controls="sidebar-user">
-                   <i class="icon" data-bs-toggle="tooltip" title="TV Shows" data-bs-placement="right" aria-label="TV Shows" data-bs-original-title="TV Shows">
-                      <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path
-                            opacity="0.4"
-                            d="M13.7505 9.70303V7.68318C13.354 7.68318 13.0251 7.36377 13.0251 6.97859V4.57356C13.0251 4.2532 12.764 4.00049 12.4352 4.00049H5.7911C3.70213 4.00049 2 5.653 2 7.68318V10.1155C2 10.3043 2.07737 10.4828 2.21277 10.6143C2.34816 10.7449 2.53191 10.8201 2.72534 10.8201C3.46035 10.8201 4.02128 11.3274 4.02128 11.9944C4.02128 12.6905 3.45068 13.2448 2.73501 13.2533C2.33849 13.2533 2 13.5257 2 13.9203V16.3262C2 18.3555 3.70213 19.9995 5.78143 19.9995H12.4352C12.764 19.9995 13.0251 19.745 13.0251 19.4265V17.3963C13.0251 17.0027 13.354 16.6917 13.7505 16.6917V14.8701C13.354 14.8701 13.0251 14.5497 13.0251 14.1655V10.4076C13.0251 10.0224 13.354 9.70303 13.7505 9.70303Z"
-                            fill="currentColor"
-                         ></path>
-                         <path
-                            d="M19.9787 11.9948C19.9787 12.69 20.559 13.2443 21.265 13.2537C21.6615 13.2537 22 13.5262 22 13.9113V16.3258C22 18.3559 20.3075 20 18.2186 20H15.0658C14.7466 20 14.4758 19.7454 14.4758 19.426V17.3967C14.4758 17.0022 14.1567 16.6921 13.7505 16.6921V14.8705C14.1567 14.8705 14.4758 14.5502 14.4758 14.1659V10.4081C14.4758 10.022 14.1567 9.70348 13.7505 9.70348V7.6827C14.1567 7.6827 14.4758 7.36328 14.4758 6.9781V4.57401C14.4758 4.25366 14.7466 4 15.0658 4H18.2186C20.3075 4 22 5.64406 22 7.6733V10.0407C22 10.2286 21.9226 10.4081 21.7872 10.5387C21.6518 10.6702 21.4681 10.7453 21.2747 10.7453C20.559 10.7453 19.9787 11.31 19.9787 11.9948Z"
-                            fill="currentColor"
-                         ></path>
-                      </svg>
-                   </i>
-                   <span class="item-name">TV Shows</span>
-                   <i class="right-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" class="icon-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                      </svg>
-                   </i>
-                </a> --}}
                 <ul class="sub-nav collapse" id="sidebar-Shows" data-bs-parent="#sidebar-menu">
                    <li class="nav-item">
                       <a class="nav-link" href="../dashboard/tv-shows/show-list.html">

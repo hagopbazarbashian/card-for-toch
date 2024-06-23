@@ -13,12 +13,12 @@ class AddNewcardController extends Controller
      * Display a listing of the resource.
      *  
      * @return \Illuminate\Http\Response
-     */
+     */   
     public function index()
     {
         try {
 
-          $newproducts = newproduct::first();
+          $newproducts = newproduct::get();
           return view('Admin.shop.add-product.product-index',compact('newproducts'));
 
         } catch (\Exception $e) {
@@ -53,7 +53,7 @@ class AddNewcardController extends Controller
      */
     public function store(Request $request)
     {
-            // try {
+            try {
                 $request->validate([
                     'photo' => 'required',
                     'title' => 'required',
@@ -76,13 +76,14 @@ class AddNewcardController extends Controller
                     'description' => $request->description,
                     'price' => $request->price,
                     'symbole' => $request->symbole,
+                    'fee' => $request->fee,
                     'photo' => $photoFileName,
                 ]);
             
                 return redirect()->route('add-new-card.index')->with('success', 'Your product was successfully created.');
-                // } catch (\Exception $e) {
-                //     return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
-                // }
+                } catch (\Exception $e) {
+                    return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
+                }
             }
 
     /**
@@ -103,11 +104,10 @@ class AddNewcardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
         try {
-            $colors = color::get();
-            $newproduct = newproduct::with('photo')->find($id);
-           return view('admin.shop.add-product.product-edit',compact('newproduct','colors'));
+            $newproduct = newproduct::find($id);
+           return view('admin.shop.add-product.product-edit',compact('newproduct'));
 
           } catch (\Exception $e) {
 
@@ -129,48 +129,36 @@ class AddNewcardController extends Controller
             $request->validate([
                 'photos.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
                 'title' => 'required',
-                'description' => 'required|max:250',
-                'price' => 'required',
-                'symbole' => 'required',
+                'description' => 'max:250',
             ]);
 
-            // Find the existing product by ID
-            $existingProduct = newproduct::with('photo')->findOrFail($id);
+            $newproduct = newproduct::findOrFail($id);
 
-            // Update the existing product fields
-            $existingProduct->update([
-                'title' => $request->title,
-                'description' => $request->description,
-                'color_id' => json_encode($request->color_id),
-                'price' => $request->price,
-                'symbole' => $request->symbole,
-                'discount' => $request->discount,
-            ]);
-
-            $uploadedPhotos = [];
-
+      
             if ($request->hasFile('photo')) {
-                // Delete existing photos
-                $existingProduct->photo()->delete();
-
-                // Save new photos
-                foreach ($request->file('photo') as $photo) {
-                    $photoFileName = $photo->hashName();
-                    $destinationPath = public_path('product-images');
-                    $photo->move($destinationPath, $photoFileName);
-
-                    $uploadedPhotos[] = [
-                        'newproduct_id' => $existingProduct->id,
-                        'photo' => $photoFileName,
-                    ];
+                // Delete the old photo if it exists
+                if ($newproduct->photo && file_exists(public_path('productimages/' . $newproduct->photo))) {
+                    unlink(public_path('productimages/' . $newproduct->photo));
                 }
 
-                // Save new photos in the database
-                photo::insert($uploadedPhotos);
+                $photo = $request->file('photo');
+                $photoFileName = $photo->hashName();
+                $destinationPath = public_path('productimages');
+                $photo->move($destinationPath, $photoFileName);
+
+            
+                $newproduct->photo = $photoFileName;
             }
 
+                $newproduct->title = $request->title;
+                $newproduct->description = $request->description;
+                 $newproduct->fee = $request->fee;
+                $newproduct->price = $request->price;
+                $newproduct->symbole = $request->symbole;
 
-            return redirect()->route('add-new-card.index')->with('succes', 'Your product has been successfully updated.');
+                $newproduct->save();
+
+            return redirect()->route('add-new-card.index')->with('success', 'Your product was successfully updated.');
 
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage());
@@ -187,12 +175,9 @@ class AddNewcardController extends Controller
     {
         try {
             // Find the product by ID
-            $product = newproduct::with('photo')->findOrFail($id);
+            $product = newproduct::findOrFail($id);  
 
             // Delete associated photos
-            $product->photo()->delete();
-
-            // Delete the product
             $product->delete();
 
             return redirect()->route('add-new-card.index')->with('succes', 'Product deleted successfully.');

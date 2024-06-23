@@ -10,11 +10,13 @@ class newproduct extends Model
     protected $fillable = [
         'title',
         'description',  
-        'price', 
+        'price',
+        'fee',
         'symbole',
         'photo',
         'status'
     ];
+
 
     public function photo()
     {

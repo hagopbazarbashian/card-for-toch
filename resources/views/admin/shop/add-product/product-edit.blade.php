@@ -59,36 +59,32 @@
                 <form action="{{route('add-new-card.update',$newproduct->id)}}" method="post" id="createForm" enctype="multipart/form-data">
                     @csrf
                     @method('put')
-                    @foreach ($newproduct->photo as $photo)
                     <div class="bd-example">
-                        <img class="bd-placeholder-img img-thumbnail" src="{{asset('product-images/'.$photo->photo)}}" width="200" height="200" alt="Photo">
+                        <img class="bd-placeholder-img img-thumbnail" src="{{asset('productimages/'.$newproduct->photo)}}" width="200" height="200" alt="Photo">
                         <!-- Add other photo details as needed -->
                     </div>
-                   @endforeach
                     <div class="user-login-card bg-body">
                         <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-5">
                             <div class="col">
                                 <label class="text-white fw-500 mb-2">Photos</label>
-                                <input type="file" name="photo[]" class="form-control rounded-0" multiple />
+                                <input type="file" name="photo" class="form-control rounded-0"/>
                             </div>
                             <div class="col">
                                 <label class="text-white fw-500 mb-2">Title</label>
                                 <input type="text" name="title" class="form-control rounded-0" value="{{ $newproduct->title }}" />
                             </div>
-                            <div class="col">
-                                <select class="form-select" name="color_id[]" aria-label="Default select example" multiple>
-                                    @foreach ($colors as $color)
-                                    <option value="{{$color->code}}" style="background-color:{{$color->code}};">
-                                        {{$color->code}}
-                                    </option>
-                                    @endforeach
-                                </select>
+
+                             <div class="col">
+                                <label class="text-white fw-500 mb-2">Fee</label>
+                                <input type="text" name="fee" class="form-control rounded-0" value="{{ $newproduct->fee }}" />
                             </div>
+
                             <div class="col">
                                 <select  name="symbole" class="form-select" aria-label="Default select example">
                                     <option value="$">$</option> <!-- &#36; is the HTML entity for dollar sign ($) -->
                                     <option value="£">£</option> <!-- &#163; is the HTML entity for pound sign (£) -->
                                     <option value="€">€</option> <!-- &#8364; is the HTML entity for euro sign (€) -->
+                                    <option value="Դ">Դ</option> <!-- &#8364; is the HTML entity for euro sign (Դ) -->
                                 </select>
                             </div>
 
