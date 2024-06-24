@@ -17,9 +17,21 @@ class checkout extends Model
         'email',
         'additionalinformation',
         'quantity',
-        'fixprice',
         'price',
+        'fee',
         'status',
         'symbole'
     ];
+  
+
+
+    /**
+     * Get the user that owns the checkout
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function newproduct()
+    {
+        return $this->belongsTo(newproduct::class, 'newproduct_id');
+    }
 }

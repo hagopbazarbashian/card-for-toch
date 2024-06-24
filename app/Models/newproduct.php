@@ -17,14 +17,16 @@ class newproduct extends Model
         'status'
     ];
 
-
-    public function photo()
+    /**
+     * Get the user associated with the newproduct
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function checkout()
     {
-        return $this->hasMany(photo::class ,'newproduct_id');
+        return $this->hasOne(checkout::class, 'newproduct_id');
     }
 
-    public function color()
-    {
-        return $this->hasMany(color::class);
-    }
+ 
+    
 }

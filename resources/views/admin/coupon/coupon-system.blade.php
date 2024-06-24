@@ -1,8 +1,6 @@
 @extends('admin.layout.app')
-
 @section('admin_home')
 @section('title', 'Coupon System') 
-
 <div class="container-fluid">
     <div class="row">
        <div class="col-sm-12">

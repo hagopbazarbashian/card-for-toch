@@ -26,8 +26,7 @@ return new class extends Migration
             $table->string('quantity')->default('1');
             $table->string('symbole');
             $table->string('price');
-            $table->string('fixprice');
-            $table->string('color')->nullable();
+            $table->string('fee');
             $table->string('status')->default('0');
             $table->foreign('newproduct_id')->references('id')->on('newproducts')->onDelete('cascade');
             $table->timestamps();
