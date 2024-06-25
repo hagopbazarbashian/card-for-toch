@@ -17,3 +17,4 @@ class ShopInfoController extends Controller
          }
      }
 }
+  

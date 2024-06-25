@@ -95,8 +95,8 @@
     </div>
     <div class="header-bottom header-sticky">
         <nav class="nav navbar navbar-expand-xl navbar-light iq-navbar header-hover-menu py-xl-0">
-            <div class="container-fluid navbar-inner">
-                <div class="d-flex align-items-center justify-content-between w-100 landing-header">
+            <div class="container-fluid navbar-inner" style="display: flex;justify-content: center;">
+                <div class="d-flex align-items-center justify-content-center w-100 landing-header">
                     <div class="d-xl-none d-flex gap-3 gap-xl-0 align-items-center">
                         <div>
                             <button type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_main"
@@ -161,7 +161,7 @@
                           <button type="button" class="btn-close float-end px-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <ul class="navbar-nav iq-nav-menu  list-unstyled" id="header-menu">
-                          <li class="nav-item">
+                          {{-- <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#homePages" role="button" aria-expanded="false" aria-controls="homePages">
                               <span class="item-name">Home</span>
                               <span class="menu-icon">
@@ -192,8 +192,8 @@
                                 <a class="nav-link active" href="./merchandise-store.html"> Merchandise Store </a>
                               </li>
                             </ul>
-                          </li>
-                          <li class="nav-item">
+                          </li> --}}
+                          {{-- <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#features" role="button" aria-expanded="false" aria-controls="homePages">
                               <span class="item-name">Features</span>
                               <span class="menu-icon">
@@ -224,8 +224,8 @@
                                 <a class="nav-link " href="./tags.html"> Tags </a>
                               </li>
                             </ul>
-                          </li>
-                          <li class="nav-item">
+                          </li> --}}
+                          {{-- <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#pages" role="button" aria-expanded="false" aria-controls="homePages">
                               <span class="item-name">Pages</span>
                               <span class="menu-icon">
@@ -276,8 +276,8 @@
                                 </ul>
                               </li>
                             </ul>
-                          </li>
-                          <li class="nav-item">
+                          </li> --}}
+                          {{-- <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="blog">
                               <span class="item-name">Blog</span>
                               <span class="menu-icon">
@@ -374,8 +374,8 @@
                                 </ul>
                               </li>
                             </ul>
-                          </li>
-                          <li class="nav-item">
+                          </li> --}}
+                          {{-- <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="collapse" href="#shop" role="button" aria-expanded="false" aria-controls="shop">
                               <span class="item-name">Shop</span>
                               <span class="menu-icon">
@@ -406,7 +406,7 @@
                                 <a class="nav-link " href="./shop/order-tracking.html"> Order Tracking </a>
                               </li>
                             </ul>
-                          </li>
+                          </li> --}}
                         </ul>
                       </div>
                       <!-- container-fluid.// -->

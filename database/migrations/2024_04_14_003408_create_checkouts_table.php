@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
+            $table->string('user_session')->nullable();
             $table->unsignedBigInteger('newproduct_id');
             $table->string('name')->nullable();
             $table->string('lastname')->nullable();
@@ -27,6 +28,9 @@ return new class extends Migration
             $table->string('symbole');
             $table->string('price');
             $table->string('fee');
+            $table->string('coupon_rate')->nullable();
+            $table->string('coupon_number')->nullable();
+            $table->string('pay_type');
             $table->string('status')->default('0');
             $table->foreign('newproduct_id')->references('id')->on('newproducts')->onDelete('cascade');
             $table->timestamps();

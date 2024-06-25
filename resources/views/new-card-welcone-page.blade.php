@@ -61,14 +61,14 @@
                             </div>
                          </div>
                          <div class="d-flex justify-content-between align-items-center">
-                            <a href="#" class="btn btn-sm btn-primary cart-btn">
+                            <a href="{{route('single_card',$product->id)}}" class="btn btn-sm btn-primary">
                                <span class="button-text">Add to cart</span>
                                <i class="fa-solid fa-play ms-2"></i>
                             </a>
                             <a href="#" class="btn btn-outline-secondary add_to_wishlist wishlist-btn">
                                <i class="far fa-heart"></i>
                             </a>
-                            <a href="#" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#woosq-popup">
+                            <a href="{{route('single_card',$product->id)}}" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#woosq-popup">
                                <i class="fa-solid fa-eye"></i>
                             </a>
                          </div>

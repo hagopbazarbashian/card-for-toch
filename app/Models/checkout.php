@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class checkout extends Model
 {
     protected $fillable = [
+        'user_session',
         'newproduct_id',
         'name',
         'lastname',
@@ -19,6 +20,9 @@ class checkout extends Model
         'quantity',
         'price',
         'fee',
+        'coupon_rate',
+        'coupon_number',  
+        'pay_type',
         'status',
         'symbole'
     ];

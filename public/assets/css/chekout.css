@@ -1,0 +1,20 @@
+.containerr {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 80%;
+    font-weight: 700;
+    margin-bottom: 8rem;
+    gap: 2rem;
+    padding: 0px 20px;
+ }
+ .form-control:focus{
+    border-color: #68b7e2 !important;
+ }
+ .form-check-input:checked{
+    background-color: #68b7e2 !important;
+    border-color: #68b7e2 !important;
+ }
+ .text-primary{
+    font-size: 18px;
+    color:#68b7e2 !important;
+ }

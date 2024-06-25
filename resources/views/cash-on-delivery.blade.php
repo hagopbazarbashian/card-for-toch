@@ -1,5 +1,5 @@
 @extends('layout.app-shop')
-@section('title'){{ 'Checkout' }}
+@section('title'){{ 'Cash On Delivery' }}
 @endsection
 @section('home')
 <link rel="stylesheet" href="{{ asset('assets/css/chekout.css') }}" />

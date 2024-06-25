@@ -8,6 +8,7 @@ use App\Http\Controllers\ViewAllProductController;
 use App\Http\Controllers\SingleShopPageController;
 use App\Http\Controllers\ShopAddTocartController;
 use App\Http\Controllers\ShopInfoController;
+use App\Http\Controllers\CheckoutController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -62,6 +63,7 @@ Route::resource('add-shop-card', ShopAddTocartController::class);
 //////////////////////////////////
 //Shop Card Info
 Route::get('checkout/{id}' , [ShopInfoController::class , 'index'])->name('checkout');
+Route::post('start-process' , [CheckoutController::class , 'startprocess'])->name('start_process');
 
 Route::middleware(['admin:admin'])->group(function () {
     Route::get('admin_home' , [AdminHomeController::class , 'index'])->name('admin_home');
