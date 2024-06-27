@@ -7,7 +7,7 @@
     .navbar-brand img.logo{
      height: 5.375rem !important;
      max-height: 4.375rem !important;
-     position: relative;
+     position: relative;   
      top: 21px;
     }
    }

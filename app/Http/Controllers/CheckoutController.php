@@ -48,7 +48,8 @@ class CheckoutController extends Controller
                 }
 
                 $rateproces = ((float)$checkout->price * (float)$bonus->rate) / 100;
-                
+
+            
                 $checkout->update([
                     'coupon_number' => $request->coupon_number,
                     'coupon_rate' => $bonus->rate,
@@ -68,13 +69,13 @@ class CheckoutController extends Controller
 
         //Directbank Transfer system servic
         if($checkout->pay_type == 'bank_transfer'){
-            return $idramservic = Directbanktransfer::banktransfer($request);
+            return $idramservic = Directbanktransfer::banktransfer($request , $checkout);
         }
 
         //Cashon Delivery system servic
         if($checkout->pay_type == 'cash_on_delivery'){
-            return $idramservic = Cashondelivery::cashondelivery($request);
-        }
+            return $idramservic = Cashondelivery::cashondelivery($request , $checkout);
+        }   
 
         return redirect()->back()->with('success', 'Order placed successfully!');
 

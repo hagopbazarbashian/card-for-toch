@@ -15,7 +15,7 @@ class checkout extends Model
         'company',
         'city',
         'phonenumber',
-        'email',
+        'email', 
         'additionalinformation',
         'quantity',
         'price',
