@@ -6,9 +6,9 @@
         <video src="{{ asset('shop/assets/images/mainmotionn_1_mobile.mp4') }}" autoplay muted loop></video>
     </div>
     <div class="content">
-        <h1>CONNECT SMART. NOT HARDER</h1>
-        <h3>THE FUTURE OF NETWORKING</h3>
-        <h3>THE SUSTAINABLE SOLUTION FOR NEXT-LEVEL NETWORKING</h3>
+      <h1>{{ __('messages.connect_smart_not_harder') }}</h1>
+      <h3>{{ __('messages.future_of_networking') }}</h3>
+      <h3>{{ __('messages.sustainable_solution') }}</h3>
         <div class="iq-button">
             <a href="{{route('shop_page')}}" class="btn text-uppercase position-relative">
                 <span class="button-text">SHOP CARDS</span>

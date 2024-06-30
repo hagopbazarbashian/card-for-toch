@@ -36,7 +36,6 @@
        <div class="sidebar-list">
           <!-- Sidebar Menu Start -->
           <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
-            
               {{-- Start Shop --}}
              <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('shop-slider.index') ? 'active' : '' }}" href="{{route('shop-slider.index')}}">
@@ -51,8 +50,8 @@
                    </i>
                    <span class="item-name">Shop Slider</span>
                 </a> 
-             </li>
-             <li class="nav-item">
+             </li> 
+             <li class="nav-item"> 
                 <a class="nav-link {{ request()->routeIs('add-new-card.index') ? 'active' : '' }}" href="{{route('add-new-card.index')}}">
                     <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
                         <i class="fas fa-id-card"></i> <!-- Font Awesome subscribe (rss) icon -->
@@ -68,32 +67,13 @@
                    <span class="item-name">Coupon</span>
                 </a>
              </li>
-                <ul class="sub-nav collapse" id="sidebar-Shows" data-bs-parent="#sidebar-menu">
-                   <li class="nav-item">
-                      <a class="nav-link" href="../dashboard/tv-shows/show-list.html">
-                         <i class="icon" data-bs-toggle="tooltip" title="Show Lists" data-bs-placement="right" aria-label="Show Lists" data-bs-original-title="Show Lists">
-                            <i class="fa-solid fa-film"></i>
-                         </i>
-                         <span class="item-name">Show Lists</span>
-                      </a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="../dashboard/tv-shows/season.html">
-                         <i class="icon" data-bs-toggle="tooltip" title="Seasons" data-bs-placement="right" aria-label="Seasons" data-bs-original-title="Seasons">
-                            <i class="fa-solid fa-film"></i>
-                         </i>
-                         <span class="item-name">Seasons</span>
-                      </a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="../dashboard/tv-shows/episodes.html">
-                         <i class="icon" data-bs-toggle="tooltip" title="Episodes" data-bs-placement="right" aria-label="Episodes" data-bs-original-title="Episodes">
-                            <i class="fa-solid fa-film"></i>
-                         </i>
-                         <span class="item-name">Episodes</span>
-                      </a>
-                   </li>
-                </ul>
+             <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('admin-check-out.index') ? 'active' : '' }}" href="{{route('admin-check-out.index')}}">
+                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
+                        <i class="fas fa-check"></i> <!-- Font Awesome subscribe (rss) icon -->
+                    </i>
+                   <span class="item-name">Check Out</span>
+                </a>
              </li>
              {{-- <li class="nav-item">
                 <a class="nav-link" href="../dashboard/special-pages/pricing.html">

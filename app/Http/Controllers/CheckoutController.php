@@ -74,7 +74,7 @@ class CheckoutController extends Controller
 
         //Cashon Delivery system servic
         if($checkout->pay_type == 'cash_on_delivery'){
-            return $idramservic = Cashondelivery::cashondelivery($request , $checkout);
+            return $idramservic = Cashondelivery::cashondelivery($request , $checkout);  
         }   
 
         return redirect()->back()->with('success', 'Order placed successfully!');

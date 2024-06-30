@@ -12,6 +12,7 @@
     }
    }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 <header class="header-center-home header-merchandise">
     <div class="header-top d-xl-block d-none">
         <div class="container-fluid">
@@ -40,55 +41,23 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0">
-                        {{-- <li>
-                            <a href="#offcanvasCart" class="text-white" data-bs-toggle="offcanvas">
-                                <span class="btn-icon rounded-pill user-icons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16"
-                                        fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M10.0096 14.3334H4.44435C2.40011 14.3334 0.831841 13.595 1.2773 10.6232L1.79599 6.59575C2.07059 5.11292 3.01643 4.54541 3.84633 4.54541H10.632C11.4741 4.54541 12.365 5.15563 12.6823 6.59575L13.201 10.6232C13.5794 13.2594 12.0538 14.3334 10.0096 14.3334Z"
-                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path
-                                            d="M10.1008 4.39882C10.1008 2.80811 8.81129 1.51858 7.22057 1.51858V1.51858C6.45457 1.51533 5.71883 1.81735 5.17604 2.35786C4.63325 2.89836 4.32812 3.63282 4.32813 4.39882H4.32812"
-                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                        <path d="M9.1983 7.4013H9.16779" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M5.3106 7.4013H5.28009" stroke="currentColor" stroke-width="1.5"
-                                            stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </span>
-                            </a>
-                        </li> --}}
-                        {{-- Login Button --}}
-                        <li class="dropdown" id="itemdropdown1">
-                            <a class="text-white d-flex align-items-center" href="/sddsds" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <div class="btn-icon rounded-pill user-icons">
-                                    <span class="btn-inner">
-                                        <svg class="icon-18" width="18" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.87651 15.2063C6.03251 15.2063 2.74951 15.7873 2.74951 18.1153C2.74951 20.4433 6.01251 21.0453 9.87651 21.0453C13.7215 21.0453 17.0035 20.4633 17.0035 18.1363C17.0035 15.8093 13.7415 15.2063 9.87651 15.2063Z"
-                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.8766 11.886C12.3996 11.886 14.4446 9.841 14.4446 7.318C14.4446 4.795 12.3996 2.75 9.8766 2.75C7.3546 2.75 5.3096 4.795 5.3096 7.318C5.3006 9.832 7.3306 11.877 9.8456 11.886H9.8766Z"
-                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round"></path>
-                                            <path d="M19.2036 8.66919V12.6792" stroke="currentColor" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
-                                            <path d="M21.2497 10.6741H17.1597" stroke="currentColor" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </a>
-
-                        </li>
-                    </ul>
+                  <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0 language-selector">
+                    <li class="d-flex align-items-center">
+                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'en') }}">
+                            <span class="flag-icon flag-icon-gb me-2"></span>
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'hy') }}">
+                            <span class="flag-icon flag-icon-am me-2"></span>
+                        </a>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'ru') }}">
+                            <span class="flag-icon flag-icon-ru me-2"></span>
+                        </a>
+                    </li>
+                </ul>
                 </div>
             </div>
         </div>
@@ -96,10 +65,10 @@
     <div class="header-bottom header-sticky">
         <nav class="nav navbar navbar-expand-xl navbar-light iq-navbar header-hover-menu py-xl-0">
             <div class="container-fluid navbar-inner" style="display: flex;justify-content: center;">
-                <div class="d-flex align-items-center justify-content-center w-100 landing-header">
+                <div class="">
                     <div class="d-xl-none d-flex gap-3 gap-xl-0 align-items-center">
                         <div>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_main"
+                            {{-- <button type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_main"
                                 aria-controls="navbar_main"
                                 class="d-xl-none btn btn-primary rounded-pill p-1 pt-0 toggle-rounded-btn">
                                 <svg width="20px" class="icon-20" viewBox="0 0 24 24">
@@ -107,7 +76,7 @@
                                         d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z">
                                     </path>
                                 </svg>
-                            </button>
+                            </button> --}}
                         </div>
                        <!--Logo -->
                         <div class="logo-default">
@@ -412,24 +381,24 @@
                       <!-- container-fluid.// -->
                     </nav>
                     <!-- Horizontal Menu End -->                    <div class="right-panel">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-btn">
                                 <span class="navbar-toggler-icon"></span>
                             </span>
-                        </button>
+                        </button> --}}
                         <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
                             <div class="iq-meta-menu-container d-xl-block d-none">
                                 <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
                                     <li>
-                                        <a href="./shop/my-account.html">My Account</a>
+                                        <a href="#">{{__('messages.my_account')}}</a>
                                     </li>
                                     <li>
-                                        <a href="https://iqonic.desky.support/">Customer Support</a>
+                                        <a href="#">{{__('messages.customer_support')}}</a>
                                     </li>
                                     <li>
-                                        <a href="./contact-us.html">Help?</a>
+                                        <a href="#">{{__('messages.help')}}</a>
                                     </li>
                                 </ul>
                             </div>

@@ -81,9 +81,6 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
-    'locale' => 'en',
-
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -108,8 +105,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
-
+    'locale' => 'en', // Default locale is English
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

@@ -34,7 +34,7 @@
       </div>
   </div> --}}
   <!-- loader END -->  <!-- loader END -->
-  <main class="main-content hide-on-desktop">
+  <main class="main-content hide-on-desktop" id="content">
       <!--Nav Start-->
       <header class="header-center-home header-merchandise">
         @unless(request()->is(['/', 'login-user', 'register-user','welcome-user','welcome-user-get-card','admin/login']))

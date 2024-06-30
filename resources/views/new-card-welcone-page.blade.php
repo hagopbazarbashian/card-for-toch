@@ -15,7 +15,7 @@
             margin-left: 0 !important;
             margin-right: 0 !important;
         }
-        col-xl-9{
+        .col-xl-9{
             margin: 360px 0 0 0;
         }
     }

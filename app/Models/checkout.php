@@ -9,7 +9,7 @@ class checkout extends Model
 {
     protected $fillable = [
         'user_session',
-        'newproduct_id',
+        'newproduct_id', 
         'name',
         'lastname',
         'company',

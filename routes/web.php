@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ShopPageController;
+use App\Http\Controllers\ShopPageController; 
 use App\Http\Controllers\ShopCardController;
 use App\Http\Controllers\ViewAllProductController;
 use App\Http\Controllers\SingleShopPageController;
 use App\Http\Controllers\ShopAddTocartController;
 use App\Http\Controllers\ShopInfoController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\LanguageController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Admin\Shop\AddNewcardController;
 use App\Http\Controllers\Admin\Shop\ColorController;
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Admin\Shop\AdminBobusController;
+use App\Http\Controllers\Admin\Shop\AdminCheckOutControler;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,10 @@ use App\Http\Controllers\Admin\Shop\AdminBobusController;
 
 //Home Page
 Route::get('/' , [ShopPageController::class , 'index'])->name('welcome');
+
+// Route to set language
+Route::get('/set-language/{lang}', [ShopPageController::class, 'setLanguage'])->name('setLanguage');
+
 
 // Admin System
 Route::get('admin/login' , [AdminLoginController::class ,'index'])->name('admin_login');
@@ -96,6 +102,9 @@ Route::middleware(['admin:admin'])->group(function () {
 
     //coupon System
     Route::resource('coupon', AdminBobusController::class);
+
+    //Admin Cheke Out 
+    Route::resource('admin-check-out' ,AdminCheckOutControler::class);
 
     // track-visitor
     Route::group(['middleware' => 'trackVisitor'], function () {

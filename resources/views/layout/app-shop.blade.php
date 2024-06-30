@@ -30,7 +30,7 @@
       </div>
   </div> --}}
   <!-- loader END -->  <!-- loader END -->
-  <main class="main-content">
+  <main class="main-content" id="content">
       <!--Nav Start-->
     <header class="header-center-home header-merchandise">
         @include('layout.nav-bar-shop')

@@ -2,6 +2,23 @@
 @section('title'){{ 'Checkout' }}
 @endsection
 @section('home')
+<style>
+.form-checkk {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-label {
+    display: flex;
+    align-items: center;
+}
+
+.payment-logo {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+</style>
 <link rel="stylesheet" href="{{ asset('assets/css/chekout.css') }}" />
 
 <div class="iq-breadcrumb" style="background-image: url({{ asset('productimages/'.$newproduct->photo) }});">
@@ -132,21 +149,24 @@
                                     <span class="text-primary mb-0">{{ $newproduct->symbole }}{{ $total }}</span>
                                  </td>
                               </tr>
-                           </tfoot>
+                           </tfoot>   
                         </table>
                         <div class="checkout-payment mt-4 pt-3 pb-2"> 
                            <div class="payment-box border-bottom mb-5 pb-4">
                                <div class="accordion" id="accordionPayment">
                                    <div class="accordion-item-payment">
-                                       <h6 class="accordion-header" id="payment-1">
-                                           <div class="accordion-button-payment" data-bs-toggle="collapse" data-bs-target="#collapseOnepayment" aria-expanded="true" aria-controls="collapseOnepayment">
-                                               <span class="form-check">
-                                                   <input class="form-check-input" type="radio" name="pay_type" id="flexRadioDefault1" value="bank_transfer" />
-                                                   <label class="form-check-label" for="flexRadioDefault1">
-                                                       Direct bank transfer
-                                                   </label>
-                                               </span>
-                                           </div>
+                                    <h6 class="accordion-header" id="payment-1">
+                                       <div class="accordion-button-payment" data-bs-toggle="collapse" data-bs-target="#collapseOnepayment" aria-expanded="true" aria-controls="collapseOnepayment">
+                                          <span class="form-checkk d-flex align-items-center">
+                                                <input class="form-check-input" type="radio" name="pay_type" id="flexRadioDefault1" value="bank_transfer" />
+                                                <label class="form-check-label ms-2 d-flex align-items-center" for="flexRadioDefault1">
+                                                   Direct bank transfer
+                                                   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-logo">
+                                                   <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" class="payment-logo">
+                                                   <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="American Express" class="payment-logo">
+                                                </label>
+                                          </span>
+                                       </div>
                                        </h6>
                                        <div id="collapseOnepayment" class="accordion-collapse collapse show" data-bs-parent="#accordionPayment">
                                            <div class="accordion-body">
@@ -178,7 +198,7 @@
                                                <span class="form-check">
                                                    <input class="form-check-input" type="radio" name="pay_type" id="flexRadioDefault4" value="idram" checked="checked"/>
                                                    <label class="form-check-label" for="flexRadioDefault4">
-                                                       <img src="https://prelive.idram.am/Images/new-main-logo.png" alt="Idram" style="width: 100px; height: auto;" /> Idram Payment
+                                                       <img src="https://prelive.idram.am/Images/new-main-logo.png" alt="Idram" style="width: 100px; height: auto;" />
                                                    </label>
                                                </span>
                                            </div>
