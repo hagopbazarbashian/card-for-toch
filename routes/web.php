@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\UserCardController;
 use App\Http\Controllers\Admin\AdminSubscribeController;
 use App\Http\Controllers\Admin\AdminUserAcount;
 use App\Http\Controllers\Admin\MonthlyvisitorController;
+use App\Http\Controllers\Admin\TranslationController;
 // User System
 
 //Admin Shop
@@ -105,6 +106,8 @@ Route::middleware(['admin:admin'])->group(function () {
 
     //Admin Cheke Out 
     Route::resource('admin-check-out' ,AdminCheckOutControler::class);
+
+    Route::resource('translations', TranslationController::class);
 
     // track-visitor
     Route::group(['middleware' => 'trackVisitor'], function () {
