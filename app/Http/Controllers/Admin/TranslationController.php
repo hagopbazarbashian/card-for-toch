@@ -45,7 +45,7 @@ class TranslationController extends Controller
 
         Translation::create($request->all());
 
-        return redirect()->route('admin.translations.index')->with('success', 'Translation added successfully.');
+        return redirect()->route('translations.index')->with('success', 'Translation added successfully.');
     }
 
     /**
@@ -87,7 +87,7 @@ class TranslationController extends Controller
 
         $translation->update($request->all());
 
-        return redirect()->route('admin.translations.index')->with('success', 'Translation updated successfully.');
+        return redirect()->route('translations.index')->with('success', 'Translation updated successfully.');
     }
 
     /**
@@ -100,6 +100,6 @@ class TranslationController extends Controller
     {
         $translation->delete();
 
-        return redirect()->route('admin.translations.index')->with('success', 'Translation deleted successfully.');
+        return redirect()->route('translations.index')->with('success', 'Translation deleted successfully.');
     }
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Edit Translation</h1>
-    <form action="{{ route('admin.translations.update', $translation->id) }}" method="POST">
+    <form action="{{ route('translations.update', $translation->id) }}" method="POST">
         @csrf
         @method('PUT')
         <label for="key">Key</label>

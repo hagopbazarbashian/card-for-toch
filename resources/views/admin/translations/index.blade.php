@@ -24,8 +24,8 @@
                     <td>{{ $translation->locale }}</td>
                     <td>{{ $translation->value }}</td>
                     <td>
-                        <a href="{{ route('admin.translations.edit', $translation->id) }}">Edit</a>
-                        <form action="{{ route('admin.translations.destroy', $translation->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('translations.edit', $translation->id) }}">Edit</a>
+                        <form action="{{ route('translations.destroy', $translation->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Delete</button>

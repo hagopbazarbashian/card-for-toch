@@ -22,7 +22,7 @@
     </div>
 </section><br></br><br>
 
-@include('new-card-welcone-page')
+@include('new-card-welcone-page') 
 
 
  <h2 class="tit">How It Works</h2>
