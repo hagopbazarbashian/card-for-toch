@@ -43,17 +43,17 @@
                 <div class="col-md-9">
                   <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0 language-selector">
                     <li class="d-flex align-items-center">
-                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'en') }}">
+                        <a class="text-white d-flex align-items-center" href="{{ url('/') }}?lang=en">
                             <span class="flag-icon flag-icon-gb me-2"></span>
                         </a>
                     </li>
                     <li class="d-flex align-items-center">
-                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'hy') }}">
+                        <a class="text-white d-flex align-items-center" href="{{ url('/') }}?lang=hy">
                             <span class="flag-icon flag-icon-am me-2"></span>
                         </a>
                     </li>
                     <li class="d-flex align-items-center">
-                        <a class="text-white d-flex align-items-center" href="{{ route('setLanguage', 'ru') }}">
+                        <a class="text-white d-flex align-items-center" href="{{ url('/') }}?lang=ru">
                             <span class="flag-icon flag-icon-ru me-2"></span>
                         </a>
                     </li>
@@ -392,13 +392,13 @@
                             <div class="iq-meta-menu-container d-xl-block d-none">
                                 <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
                                     <li>
-                                        <a href="#">{{__('messages.my_account')}}</a>
+                                        <a href="#">{{translate('my_account')}}</a>
                                     </li>
                                     <li>
-                                        <a href="#">{{__('messages.customer_support')}}</a>
+                                        <a href="#">{{translate('customer_support')}}</a>
                                     </li>
                                     <li>
-                                        <a href="#">{{__('messages.help')}}</a>
+                                        <a href="#">{{translate('help')}}</a>
                                     </li>
                                 </ul>
                             </div>

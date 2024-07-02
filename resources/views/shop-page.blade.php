@@ -6,16 +6,16 @@
         <video src="{{ asset('shop/assets/images/mainmotionn_1_mobile.mp4') }}" autoplay muted loop></video>
     </div>
     <div class="content">
-      <h1>{{ __('messages.connect_smart_not_harder') }}</h1>
-      <h3>{{ __('messages.future_of_networking') }}</h3>
-      <h3>{{ __('messages.sustainable_solution') }}</h3>
+      <h1>{{ translate('connect_smart_not_harder') }}</h1>
+      <h3>{{ translate('future_of_networking') }}</h3>
+      <h3>{{ translate('sustainable_solution') }}</h3>
         <div class="iq-button">
             <a href="{{route('shop_page')}}" class="btn text-uppercase position-relative">
-                <span class="button-text">SHOP CARDS</span>
+                <span class="button-text">{{translate('CARDS')}}</span>
                 <i class="fa-solid fa-play"></i>
             </a>
              <a href="" class="btn text-uppercase position-relative">
-                <span class="button-text">LOGIN TO CARD</span>
+                <span class="button-text">{{translate('LOGIN_TO_CARD')}}</span>
                 <i class="fa-solid fa-play"></i>
             </a>
         </div>
@@ -25,7 +25,7 @@
 @include('new-card-welcone-page') 
 
 
- <h2 class="tit">How It Works</h2>
+ <h2 class="tit">{{translate('How_It_Works')}}</h2>
   <!--Month entry cards-->
 
   <main class="container">
@@ -34,13 +34,13 @@
           <img src="https://v1ce.co/cdn/shop/files/V1CE-Shopify-5578.jpg?v=1681992324&width=1300" alt="September Logo" />
           <div class="info">
              <h2>
-                Step 1
+               {{translate('Step_1')}}
              </h2>
              <h3>
 
              </h3>
              <p>
-                Select from variety of smart products tailored to fit your lifestyle,brand and needs.
+                {{translate('test_step_1')}}
              </p>
           </div>
        </article>
@@ -51,13 +51,13 @@
           <img src="https://v1ce.co/cdn/shop/files/V1CE-Shopify--3_45a4821f-7724-405a-9c60-aca328c10d1a.jpg?v=1683381420&width=1300" alt="October Logo" />
           <div class="info">
              <h2>
-                Step 2
+               {{translate('Step_2')}}
              </h2>
              <h3>
 
              </h3>
              <p>
-                Create Your Free Profile Add new card to your profile and upload all your contact information, social media, brand logo, price list and more.
+               {{translate('test_step_2')}}
              </p>
           </div>
        </article>
@@ -68,14 +68,13 @@
           <img src="https://v1ce.co/cdn/shop/files/V1CE-Table-Talkers-0018.jpg?v=1691439154&width=1300" alt="November Logo" />
           <div class="info">
              <h2>
-                Step 2
+               {{translate('Step_3')}}
              </h2>
              <h3>
 
              </h3>
              <p>
-                Start Networking New youcan share all your information to others with just a touch! Need help? See our FAQ
-
+               {{translate('test_step_2')}}
              </p>
           </div>
        </article>

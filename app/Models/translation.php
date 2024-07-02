@@ -9,3 +9,4 @@ class translation extends Model
 {
     protected $fillable = ['key', 'locale', 'value'];
 }
+ 
