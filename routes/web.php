@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminSubscribeController;
 use App\Http\Controllers\Admin\AdminUserAcount;
 use App\Http\Controllers\Admin\MonthlyvisitorController;
 use App\Http\Controllers\Admin\TranslationController;
+use App\Http\Controllers\Admin\AdminCategoryController;
 // User System
 
 //Admin Shop
@@ -108,6 +109,10 @@ Route::middleware(['admin:admin'])->group(function () {
     Route::resource('admin-check-out' ,AdminCheckOutControler::class);
 
     Route::resource('translations', TranslationController::class);
+
+    //Category
+    Route::resource('category', AdminCategoryController::class);
+
 
     // track-visitor
     Route::group(['middleware' => 'trackVisitor'], function () {

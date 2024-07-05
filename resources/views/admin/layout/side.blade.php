@@ -83,6 +83,14 @@
                   <span class="item-name">Lang Key</span>
                </a>
             </li>
+            <li class="nav-item">
+               <a class="nav-link {{ request()->routeIs('category.index') ? 'active' : '' }}" href="{{route('category.index')}}">
+                   <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
+                       <i class="fas fa-check"></i> <!-- Font Awesome subscribe (rss) icon -->
+                   </i>
+                  <span class="item-name">Category</span>
+               </a>
+            </li>
              {{-- <li class="nav-item">
                 <a class="nav-link" href="../dashboard/special-pages/pricing.html">
                    <i class="icon" data-bs-toggle="tooltip" title="Pricing" data-bs-placement="right" aria-label="Pricing" data-bs-original-title="Pricing">

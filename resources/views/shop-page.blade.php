@@ -22,6 +22,8 @@
     </div>
 </section><br></br><br>
 
+@include('category-page') 
+
 @include('new-card-welcone-page') 
 
 
