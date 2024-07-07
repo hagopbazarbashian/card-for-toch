@@ -15,9 +15,6 @@
             margin-left: 0 !important;
             margin-right: 0 !important;
         }
-        .col-xl-9{
-            margin: 360px 0 0 0;
-        }
     }
     </style>
 <div class="col-xl-9">

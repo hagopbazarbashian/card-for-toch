@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Shop;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\newproduct;
+use App\Models\{newproduct,category};
 
 
 class AddNewcardController extends Controller
@@ -16,9 +16,9 @@ class AddNewcardController extends Controller
      */   
     public function index()
     {
-        try {
+        try {  
 
-          $newproducts = newproduct::get();
+          $newproducts = newproduct::with('category')->get();
           return view('Admin.shop.add-product.product-index',compact('newproducts'));
 
         } catch (\Exception $e) {
@@ -36,7 +36,8 @@ class AddNewcardController extends Controller
     public function create()
     {
         try {
-          return view('Admin.shop.add-product.product-create');
+            $categorys = category::get();
+            return view('Admin.shop.add-product.product-create',compact('categorys'));
 
         } catch (\Exception $e) {
 
@@ -60,6 +61,7 @@ class AddNewcardController extends Controller
                     'description' => 'required|max:250',
                     'price' => 'required',
                     'symbole' => 'required',
+                    'category'=>'required'
                 ]);
             
                 $photoFileName = null; // Initialize the variable
@@ -72,7 +74,8 @@ class AddNewcardController extends Controller
                 }
             
                 $newproduct = newproduct::create([
-                    'title' => $request->title,
+                    'category_id'=>$request->category,
+                    'title' => $request->title,  
                     'description' => $request->description,
                     'price' => $request->price,
                     'symbole' => $request->symbole,
@@ -106,8 +109,10 @@ class AddNewcardController extends Controller
     public function edit($id)
     {   
         try {
+
+            $categorys = category::get();
             $newproduct = newproduct::find($id);
-           return view('admin.shop.add-product.product-edit',compact('newproduct'));
+           return view('admin.shop.add-product.product-edit',compact('newproduct','categorys'));
 
           } catch (\Exception $e) {
 
@@ -152,9 +157,10 @@ class AddNewcardController extends Controller
 
                 $newproduct->title = $request->title;
                 $newproduct->description = $request->description;
-                 $newproduct->fee = $request->fee;
+                $newproduct->fee = $request->fee;
                 $newproduct->price = $request->price;
                 $newproduct->symbole = $request->symbole;
+                $newproduct->category_id = $request->category;
 
                 $newproduct->save();
 

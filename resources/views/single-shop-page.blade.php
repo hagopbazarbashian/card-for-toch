@@ -2,7 +2,8 @@
 @section('title'){{ 'Single Product' }}@endsection
 @section('home')
 <style>
-.containerr{
+.containerr {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -11,11 +12,11 @@
     padding: 0 20px;
     margin-bottom: 1rem;
 }
-.section-padding-top{
-  padding: 0.25rem 0 0 0 !important;
+.section-padding-top {
+    padding: 0.25rem 0 0 0 !important;
 }
-.swiper{
-  margin-bottom: 0.25rem !important;
+.swiper {
+    margin-bottom: 0.25rem !important;
 }
 </style>
 <div class="section-padding-top product-detail">
@@ -23,13 +24,28 @@
       <div class="row">
          <div class="col-lg-6">
             <div class="product-tab-slider">
-               <div class="swiper product-tab-slider-thumb" data-swiper="slider-prodcut-images">
+               <div class="swiper product-tab-slider-thumb" id="main-slider">
                   <div class="swiper-wrapper m-0">
                      <div class="swiper-slide p-0">
                         <a data-fslightbox="product" href="{{ asset('productimages/'.$newproductalls->photo) }}">
                            <img src="{{ asset('productimages/'.$newproductalls->photo) }}" class="img-fluid product-detail-image" alt="product-slide-image" />
                         </a>
                      </div>
+                  </div>
+               </div>
+               <div class="swiper product-tab-slider-images" id="thumb-slider">
+                  <div class="swiper-wrapper m-0">
+                     @foreach ($additinelphotos as $additinelphoto)
+                     @if ($additinelphoto->additionalphoto)
+                        <div class="swiper-slide p-0">
+                              <img src="{{ asset('additionphoto/' . $additinelphoto->additionalphoto->photo) }}" class="img-fluid" alt="product-slide-image">
+                        </div>
+                     @else
+                        <div class="swiper-slide p-0">
+                              <img src="{{ asset('additionphoto/default-photo.jpg') }}" class="img-fluid" alt="default-slide-image">
+                        </div>
+                     @endif
+                     @endforeach
                   </div>
                </div>
             </div>
@@ -65,7 +81,7 @@
                   </li>
                   <li>
                      <div class="iq-button">
-                        <a href="{{ route('checkout',$newproductalls->id) }}" class="btn btn-sm cart-btn text-uppercase position-relative">
+                        <a href="{{ route('checkout', $newproductalls->id) }}" class="btn btn-sm cart-btn text-uppercase position-relative">
                            <span class="button-text">Add to Cart</span>
                            <i class="fa-solid fa-play"></i>
                         </a>
@@ -85,49 +101,46 @@
             <div class="card-style-slider">
                <div class="position-relative swiper swiper-card" data-slide="4" data-laptop="4" data-tab="3" data-mobile="2" data-mobile-sm="2" data-autoplay="true" data-loop="true" data-navigation="true" data-pagination="true">
                   <ul class="p-0 swiper-wrapper m-0 list-inline">
-                   @foreach ($newproductallsall as $cardalls)
-                   <li class="swiper-slide">
-                       <div class="product-block">
-                          <div class="image-wrap">
-                             <a href="{{route('single_card',$cardalls->id)}}">
-                                <div class="product-image">
-                                   <img src="{{ asset('productimages/'.$cardalls->photo) }}" class="img-fluid w-100" alt="productImg-01" loading="lazy" />
-                                </div>
-                             </a>
-
-                          </div>
-                          <div class="product-caption">
-                             <h5 class="product__title">
-                                <a href="{{route('single_card',$cardalls->id)}}" class="title-link">{{ $cardalls->title }}</a>
-                             </h5>
-                             <div class="price-detail">
+                     @foreach ($newproductallsall as $cardalls)
+                     <li class="swiper-slide">
+                         <div class="product-block">
+                            <div class="image-wrap">
+                               <a href="{{ route('single_card', $cardalls->id) }}">
+                                  <div class="product-image">
+                                     <img src="{{ asset('productimages/' . $cardalls->photo) }}" class="img-fluid w-100" alt="productImg-01" loading="lazy" />
+                                  </div>
+                               </a>
+                            </div>
+                            <div class="product-caption">
+                               <h5 class="product__title">
+                                  <a href="{{ route('single_card', $cardalls->id) }}" class="title-link">{{ $cardalls->title }}</a>
+                               </h5>
                                <div class="price-detail">
                                   <div class="price">{{ $cardalls->symbole }}{{ $cardalls->price }}</div>
                                </div>
-                             </div>
-                             <div class="container-rating">
-                                <div class="star-rating text-primary">
-                                   <span>
-                                      <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                   </span>
-                                   <span>
-                                      <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                   </span>
-                                   <span>
-                                      <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                   </span>
-                                   <span>
-                                      <i class="fa fa-star text-warning" aria-hidden="true"></i>
-                                   </span>
-                                   <span>
-                                      <i class="fa fa-star-half text-warning" aria-hidden="true"></i>
-                                   </span>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </li>
-                   @endforeach
+                               <div class="container-rating">
+                                  <div class="star-rating text-primary">
+                                     <span>
+                                        <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                                     </span>
+                                     <span>
+                                        <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                                     </span>
+                                     <span>
+                                        <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                                     </span>
+                                     <span>
+                                        <i class="fa fa-star text-warning" aria-hidden="true"></i>
+                                     </span>
+                                     <span>
+                                        <i class="fa fa-star-half text-warning" aria-hidden="true"></i>
+                                     </span>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </li>
+                     @endforeach
                   </ul>
                </div>
             </div>
@@ -135,4 +148,25 @@
       </div>
    </div>
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const thumbsSlider = new Swiper('#thumb-slider', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        const mainSlider = new Swiper('#main-slider', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            thumbs: {
+                swiper: thumbsSlider
+            }
+        });
+    });
+</script>
 @endsection

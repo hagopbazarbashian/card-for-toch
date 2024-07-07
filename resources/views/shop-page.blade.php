@@ -20,7 +20,7 @@
             </a>
         </div>
     </div>
-</section><br></br><br>
+</section>
 
 @include('category-page') 
 

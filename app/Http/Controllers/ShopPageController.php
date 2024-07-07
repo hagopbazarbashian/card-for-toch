@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\shopslider;
-use App\Models\newproduct;
-use App\Models\shopcard;
+use App\Models\{newproduct,shopcard,category};
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -23,9 +22,10 @@ class ShopPageController extends Controller
             }
 
             App::setLocale(Session::get('locale'));
-
-            $newproducts = newproduct::get();
-            return view('shop-page', compact('newproducts'));
+ 
+            $newproducts = newproduct::with('category')->get();
+            $categorys = category::get();
+            return view('shop-page', compact('newproducts','categorys'));
         } catch (\Throwable $th) {
             throw $th;
         }

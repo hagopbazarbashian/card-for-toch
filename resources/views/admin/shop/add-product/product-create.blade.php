@@ -10,7 +10,7 @@
   background-color:#fff;
     background-size: cover;
   background-repeat:no-repeat;
-    display: inline-block;
+    display: inline-block;  
   box-shadow:0px -3px 6px 2px rgba(0,0,0,0.2);
 }
 .btn-primary
@@ -73,11 +73,20 @@
                                 <input type="text" name="fee" class="form-control rounded-0" value="{{ old('title') }}" />
                             </div>
                             <div class="col">
+                                <label class="text-white fw-500 mb-2">Symbole</label>
                                 <select  name="symbole" class="form-select" aria-label="Default select example">
                                     <option value="$">$</option> <!-- &#36; is the HTML entity for dollar sign ($) -->
                                     <option value="£">£</option> <!-- &#163; is the HTML entity for pound sign (£) -->
                                     <option value="€">€</option> <!-- &#8364; is the HTML entity for euro sign (€) -->
                                     <option value="Դ">Դ</option> <!-- &#8364; is the HTML entity for euro sign (Դ) -->
+                                </select>
+                            </div>  
+                            <div class="col">
+                                <label class="text-white fw-500 mb-2">Category</label> 
+                                <select  name="category" class="form-select" aria-label="Default select example">
+                                    @foreach ($categorys as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 

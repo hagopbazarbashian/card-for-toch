@@ -59,6 +59,14 @@
                    <span class="item-name">Add New Product</span>
                 </a>
              </li>
+             <li class="nav-item"> 
+                <a class="nav-link {{ request()->routeIs('admin-additional-photo.index') ? 'active' : '' }}" href="{{route('admin-additional-photo.index')}}">
+                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
+                        <i class="fas fa-id-card"></i> <!-- Font Awesome subscribe (rss) icon -->
+                    </i>
+                   <span class="item-name">Add Additional Photo</span>
+                </a>
+             </li>
              <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('coupon.index') ? 'active' : '' }}" href="{{route('coupon.index')}}">
                     <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
@@ -84,7 +92,7 @@
                </a>
             </li>
             <li class="nav-item">
-               <a class="nav-link {{ request()->routeIs('category.index') ? 'active' : '' }}" href="{{route('category.index')}}">
+               <a class="nav-link {{ request()->routeIs('admin-category.index') ? 'active' : '' }}" href="{{route('admin-category.index')}}">
                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
                        <i class="fas fa-check"></i> <!-- Font Awesome subscribe (rss) icon -->
                    </i>

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\newproduct;
-use App\Models\checkout;
+use App\Models\{newproduct,checkout,additionalphoto};
 
 class SingleShopPageController extends Controller
 {
@@ -12,9 +11,12 @@ class SingleShopPageController extends Controller
         try {
 
             $newproductalls = newproduct::find($id);
+
+            $additinelphotos = newproduct::with('additionalphoto')->get();
+
             $newproductallsall = newproduct::get();
             
-            return view('single-shop-page',compact('newproductalls','newproductallsall'));
+            return view('single-shop-page',compact('newproductalls','newproductallsall','additinelphotos'));
 
         } catch (\Throwable $th) {
            return redirect()->back()->with('error' , 'Error');
