@@ -12,7 +12,7 @@ class SingleShopPageController extends Controller
 
             $newproductalls = newproduct::find($id);
 
-            $additinelphotos = newproduct::with('additionalphoto')->get();
+            $additinelphotos = additionalphoto::where('new_product_id', $newproductalls->id)->get();
 
             $newproductallsall = newproduct::get();
             

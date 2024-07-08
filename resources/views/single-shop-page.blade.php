@@ -1,6 +1,12 @@
 @extends('layout.app-shop')
 @section('title'){{ 'Single Product' }}@endsection
 @section('home')
+<!-- Include Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Include Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 <style>
 .containerr {
     display: grid;
@@ -34,19 +40,17 @@
                   </div>
                </div>
                <div class="swiper product-tab-slider-images" id="thumb-slider">
+                  <div class="swiper product-tab-slider-images" id="thumb-slider">
                   <div class="swiper-wrapper m-0">
                      @foreach ($additinelphotos as $additinelphoto)
-                     @if ($additinelphoto->additionalphoto)
-                        <div class="swiper-slide p-0">
-                              <img src="{{ asset('additionphoto/' . $additinelphoto->additionalphoto->photo) }}" class="img-fluid" alt="product-slide-image">
-                        </div>
-                     @else
-                        <div class="swiper-slide p-0">
-                              <img src="{{ asset('additionphoto/default-photo.jpg') }}" class="img-fluid" alt="default-slide-image">
-                        </div>
-                     @endif
+                           <div class="swiper-slide p-0">
+                              <a href="{{ asset('additionphoto/' . $additinelphoto->photo) }}" data-lightbox="product-gallery">
+                                 <img src="{{ asset('additionphoto/' . $additinelphoto->photo) }}" class="img-fluid" alt="product-slide-image">
+                              </a>
+                           </div>
                      @endforeach
                   </div>
+               </div>
                </div>
             </div>
          </div>
@@ -168,5 +172,13 @@
             }
         });
     });
+</script>
+<!-- Include Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    })
 </script>
 @endsection

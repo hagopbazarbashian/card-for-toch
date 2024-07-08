@@ -26,7 +26,7 @@ class AdminAdditionalPhotoController extends Controller
      */
     public function create()
     {
-         $additionalphotos = additionalphoto::with('newproduct')->get();
+         $additionalphotos = additionalphoto::with('newproductt')->get();
          $newproducts = newproduct::get();
          return view('admin.additionalphoto.additionalphoto-create',compact('additionalphotos','newproducts'));
     }

@@ -133,7 +133,6 @@
                                         <span>Select Card</span>
                                     </div>
                                     <div class="options-container">
-                                       
                                         @foreach ($newproducts as $newproduct)
                                             <div class="option" data-value="{{ $newproduct->id }}">
                                                 <img src="{{ asset('productimages/'.$newproduct->photo) }}" class="option-img" alt="Product Image">

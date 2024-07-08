@@ -1,7 +1,7 @@
 <style>
   .list-inline{
     display: flex !important;
-    justify-content: center !important; 
+    /* justify-content: center !important;  */
   }
   
   @media only screen and (max-width: 767px) {
