@@ -10,6 +10,7 @@ use App\Http\Controllers\ShopAddTocartController;
 use App\Http\Controllers\ShopInfoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ShowWithCategory;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -57,6 +58,10 @@ Route::post('login_submit' , [AdminLoginController::class ,'login_submit'])->nam
 Route::get('shop-page' , [ShopPageController::class , 'index'])->name('shop_page');
 Route::get('view-all' , [ViewAllProductController::class , 'index'])->name('view_all');
 //Shop card
+
+//Show Category Page
+Route::get('show-category/{id}',[ShowWithCategory::class , 'index'])->name('show_category');
+//Show Category Page End
 
 //////////////////////////////////
 //End Shop card System 

@@ -23,12 +23,12 @@
              <li class="swiper-slide slide-item">
                 <div class="category-inner position-relative">
                   <div class="category_image">
-                    <a href="shop/shop.html">
+                    <a href="{{route('show_category',$category->id)}}">
                       <img src="{{ asset('category/' . $category->photo) }}" class="img-fluid" alt="catImg-{{ $category->id }}" />
                     </a>
                     <div class="category-details">
                       <h5 class="category-title">
-                        <a href="shop/shop.html">
+                        <a href="{{route('show_category',$category->id)}}">
                           {{ $category->name }}
                         </a>
                       </h5>
