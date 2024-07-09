@@ -16,4 +16,18 @@ class ShowWithCategory extends Controller
         }
         
     }
+
+    public function filterProducts(Request $request)
+    {
+        try {
+            $minPrice = (int)$request->minPrice;
+            $maxPrice = (int)$request->maxPrice;
+
+            $products = newproduct::where('price', [$minPrice, $maxPrice])->get();
+
+            return response()->json($products);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => $th->getMessage()], 500);
+        }
+    }
 }

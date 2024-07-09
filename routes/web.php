@@ -79,6 +79,9 @@ Route::resource('add-shop-card', ShopAddTocartController::class);
 Route::get('checkout/{id}' , [ShopInfoController::class , 'index'])->name('checkout');
 Route::post('start-process' , [CheckoutController::class , 'startprocess'])->name('start_process')->middleware('redirect.if.get');
 
+Route::post('/filter-products', [ShowWithCategory::class, 'filterProducts'])->name('filter.products');
+
+
 Route::get('/start-process', function () {
     return redirect()->back();
 })->name('start.process.get');
