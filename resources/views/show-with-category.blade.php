@@ -5,6 +5,12 @@
    .product-block .image-wrap .buttons-holder {
       background: #68b7e2 !important;
    }
+   .product-range .noUi-connect{
+    background:#68b7e2 !important;
+   }
+   .product-range .noUi-horizontal .noUi-handle{
+     background:#68b7e2 !important;
+   }
 </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
@@ -46,10 +52,10 @@
                                     <img src="{{ asset('productimages/' . $product->photo) }}" class="img-fluid w-100" alt="productImg-" loading="lazy" />
                                  </div>
                               </a>
-                              <div class="buttons-holder">
+                              {{-- <div class="buttons-holder">
                                  <ul class="list-unstyled m-0 p-0">
                                     <li>
-                                       <a class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#woosq-popup">
+                                       <a class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#photoModal" data-image-src="{{ asset('productimages/' . $product->photo) }}">
                                           <i class="fa-solid fa-eye"></i>
                                        </a>
                                     </li>
@@ -62,7 +68,7 @@
                                        </a>
                                     </li>
                                  </ul>
-                              </div>
+                              </div> --}}
                            </div>
                            <div class="product-caption">
                               <h5 class="product__title">
@@ -97,6 +103,21 @@
                   </div>
                </div>
             </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="photoModalLabel">Product Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body text-center">
+            <img id="modalImage" src="" alt="Product Image" class="img-fluid w-100">
          </div>
       </div>
    </div>
@@ -140,6 +161,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize the product list
     fetchFilteredProducts(5000, 25000);
+
+    // Event listener for modal image update
+    var photoModal = document.getElementById('photoModal');
+    photoModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget; // Button that triggered the modal
+        var imageSrc = button.getAttribute('data-image-src'); // Extract info from data-* attributes
+        var modalImage = photoModal.querySelector('#modalImage');
+        modalImage.src = imageSrc; // Update the modal's image src
+    });
 });
 
 function fetchFilteredProducts(minPrice, maxPrice) {
@@ -161,33 +191,17 @@ function fetchFilteredProducts(minPrice, maxPrice) {
                                 <div class="image-wrap">
                                     <a href="../shop/product-detail.html">
                                         <div class="product-image">
-                                            <img src="../productimages/${product.photo}" class="img-fluid w-100" alt="productImg-" loading="lazy" />
+                                            <img src="/productimages/${product.photo}" class="img-fluid w-100" alt="productImg-" loading="lazy" />
                                         </div>
                                     </a>
-                                    <div class="buttons-holder">
-                                        <ul class="list-unstyled m-0 p-0">
-                                            <li>
-                                                <a class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#woosq-popup">
-                                                    <i class="fa-solid fa-eye"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="add_to_wishlist wishlist-btn"><i class="fa-solid fa-heart"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="added_to_cart cart-btn d-flex align-items-center">
-                                                    <i class="fa-solid fa-basket-shopping"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                   
                                 </div>
                                 <div class="product-caption">
                                     <h5 class="product__title">
                                         <a href="../shop/product-detail.html" class="title-link">${product.title}</a>
                                     </h5>
                                     <div class="price-detail">
-                                        <div class="price"><del>${product.old_price}</del>${product.price}</div>
+                                        <div class="price">${product.price}${product.symbole}</div>
                                     </div>
                                     <div class="container-rating">
                                         <div class="star-rating text-primary">

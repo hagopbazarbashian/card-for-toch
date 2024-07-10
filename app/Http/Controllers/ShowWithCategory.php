@@ -19,15 +19,16 @@ class ShowWithCategory extends Controller
 
     public function filterProducts(Request $request)
     {
-        try {
+        // try {
             $minPrice = (int)$request->minPrice;
             $maxPrice = (int)$request->maxPrice;
 
             $products = newproduct::where('price', [$minPrice, $maxPrice])->get();
+            // dd($products);
 
             return response()->json($products);
-        } catch (\Throwable $th) {
-            return response()->json(['error' => $th->getMessage()], 500);
-        }
+        // } catch (\Throwable $th) {
+        //     return response()->json(['error' => $th->getMessage()], 500);
+        // }
     }
 }
