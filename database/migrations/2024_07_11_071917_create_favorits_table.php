@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('favorits', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_sessian');
-            $table->integer('product_id');
+            $table->string('user_sessian')->nullable();
+            $table->string('product_id')->nullable();
             $table->timestamps(); 
         });
     }

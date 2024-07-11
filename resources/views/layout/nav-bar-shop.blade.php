@@ -115,6 +115,15 @@
                               <li>
                                   <a href="#">{{ translate('help') }}</a>
                               </li>
+                              @foreach($newproducts as $product)
+                                <li>
+                                    @if($favorit->contains('product_id', $product->id)) <!-- Adjust 'newproduct_id' as needed -->
+                                        <a href="#" style="font-size: 30px;"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                    @else
+                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                    @endif
+                                </li>
+                            @endforeach
                           </ul>
                       </div>
                       <div class="d-xl-none">

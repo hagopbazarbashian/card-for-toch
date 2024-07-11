@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\shopslider;
-use App\Models\{newproduct,shopcard,category};
+use App\Models\{newproduct,shopcard,category,favorit};
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -14,6 +14,9 @@ class ShopPageController extends Controller
     public function index(Request $request)
     {
         try {
+            $userSession = Session::getId();
+            $favorit = favorit::with('newproduct')->where('user_sessian' , $userSession)->get();
+
             $lang = $request->query('lang');
             if ($lang) {
                 $this->setLanguage($lang);
@@ -25,7 +28,7 @@ class ShopPageController extends Controller
  
             $newproducts = newproduct::with('category')->get();
             $categorys = category::get();
-            return view('shop-page', compact('newproducts','categorys'));
+            return view('shop-page', compact('newproducts','categorys','favorit'));
         } catch (\Throwable $th) {
             throw $th;
         }

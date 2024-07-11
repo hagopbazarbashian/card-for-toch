@@ -83,7 +83,7 @@ Route::post('start-process' , [CheckoutController::class , 'startprocess'])->nam
 Route::post('/filter-products', [ShowWithCategory::class, 'filterProducts'])->name('filter.products');
 
 //Favorit List
-Route::post('add-favorit-list/{id}', [FavoritController::class, 'storefavorit'])->name('add_favorit_list');
+Route::get('add-favorit-list/{id}', [FavoritController::class, 'storefavorit'])->name('add_favorit_list');
 
 Route::get('/start-process', function () {
     return redirect()->back();

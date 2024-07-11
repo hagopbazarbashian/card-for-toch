@@ -12,8 +12,8 @@ class favorit extends Model
         'product_id'
     ];
 
-   
-
+     
+  
     /**
      * Get the user that owns the favorit
      *
