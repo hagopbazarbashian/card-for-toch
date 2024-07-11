@@ -11,6 +11,7 @@ use App\Http\Controllers\ShopInfoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ShowWithCategory;
+use App\Http\Controllers\FavoritController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -81,6 +82,8 @@ Route::post('start-process' , [CheckoutController::class , 'startprocess'])->nam
 
 Route::post('/filter-products', [ShowWithCategory::class, 'filterProducts'])->name('filter.products');
 
+//Favorit List
+Route::post('add-favorit-list/{id}', [FavoritController::class, 'storefavorit'])->name('add_favorit_list');
 
 Route::get('/start-process', function () {
     return redirect()->back();

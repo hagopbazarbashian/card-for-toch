@@ -1,7 +1,10 @@
 <style>
-  .list-inline{
+  /* .list-inline{
     display: flex !important;
-    /* justify-content: center !important;  */
+  } */
+  .list-inlinee{
+    display: flex !important;
+    justify-content: center !important; 
   }
   
   @media only screen and (max-width: 767px) {
@@ -18,9 +21,9 @@
        </div>
        <div class="position-relative swiper swiper-card" data-slide="4" data-laptop="4" data-tab="3" data-mobile="2"
           data-mobile-sm="1" data-autoplay="false" data-loop="false" data-navigation="true" data-pagination="true">
-          <ul class="list-inline swiper-wrapper p-0 m-0">
+          <ul class="list-inline swiper-wrapper p-0 m-0 list-inlinee">
              @foreach ($categorys as $category)
-             <li class="swiper-slide slide-item">
+             <li class="swiper-slide slide-item"> 
                 <div class="category-inner position-relative">
                   <div class="category_image">
                     <a href="{{route('show_category',$category->id)}}">

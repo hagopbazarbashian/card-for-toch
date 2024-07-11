@@ -11,7 +11,7 @@ class newproduct extends Model
         'category_id',
         'title',
         'description',  
-        'price',
+        'price',  
         'fee',
         'symbole',
         'photo',
@@ -42,6 +42,12 @@ class newproduct extends Model
     public function additionalphoto()
     {
         return $this->hasOne(additionalphoto::class, 'new_product_id');
+    }
+     
+
+    public function favorit()
+    {
+        return $this->hasOne(favorit::class, 'product_id');
     }
      
 

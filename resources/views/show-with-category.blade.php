@@ -35,7 +35,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div>   
          <div class="col-xl-9">
             <div class="d-flex align-items-center justify-content-between mb-5 shop-filter flex-wrap">
                <!-- Filter options -->
@@ -52,23 +52,18 @@
                                     <img src="{{ asset('productimages/' . $product->photo) }}" class="img-fluid w-100" alt="productImg-" loading="lazy" />
                                  </div>
                               </a>
-                              {{-- <div class="buttons-holder">
+                              <div class="buttons-holder">
                                  <ul class="list-unstyled m-0 p-0">
-                                    <li>
-                                       <a class="cursor-pointer" data-bs-toggle="modal" data-bs-target="#photoModal" data-image-src="{{ asset('productimages/' . $product->photo) }}">
-                                          <i class="fa-solid fa-eye"></i>
-                                       </a>
-                                    </li>
                                     <li>
                                        <a href="#" class="add_to_wishlist wishlist-btn"><i class="fa-solid fa-heart"></i></a>
                                     </li>
                                     <li>
-                                       <a href="#" class="added_to_cart cart-btn d-flex align-items-center">
+                                       <a href="{{route('single_card',$product->id)}}" class="added_to_cart cart-btn d-flex align-items-center">
                                           <i class="fa-solid fa-basket-shopping"></i>
                                        </a>
                                     </li>
                                  </ul>
-                              </div> --}}
+                              </div>
                            </div>
                            <div class="product-caption">
                               <h5 class="product__title">
@@ -163,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchFilteredProducts(5000, 25000);
 
     // Event listener for modal image update
+    document.addEventListener('DOMContentLoaded', function () {
     var photoModal = document.getElementById('photoModal');
     photoModal.addEventListener('show.bs.modal', function (event) {
         var button = event.relatedTarget; // Button that triggered the modal
@@ -170,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalImage = photoModal.querySelector('#modalImage');
         modalImage.src = imageSrc; // Update the modal's image src
     });
+});
 });
 
 function fetchFilteredProducts(minPrice, maxPrice) {
@@ -186,7 +183,7 @@ function fetchFilteredProducts(minPrice, maxPrice) {
             if(response.length > 0) {
                 response.forEach(product => {
                     $('#product-list').append(`
-                        <div class="col">
+                        <div class="col">   
                             <div class="product-block" data-price="${product.price}">
                                 <div class="image-wrap">
                                     <a href="../shop/product-detail.html">
@@ -194,7 +191,18 @@ function fetchFilteredProducts(minPrice, maxPrice) {
                                             <img src="/productimages/${product.photo}" class="img-fluid w-100" alt="productImg-" loading="lazy" />
                                         </div>
                                     </a>
-                                   
+                                    <div class="buttons-holder">
+                                    <ul class="list-unstyled m-0 p-0">
+                                       <li>
+                                          <a href="#" class="add_to_wishlist wishlist-btn"><i class="fa-solid fa-heart"></i></a>
+                                       </li>
+                                       <li>
+                                          <a href="/single-card/${product.id}" class="added_to_cart cart-btn d-flex align-items-center">
+                                             <i class="fa-solid fa-basket-shopping"></i>
+                                          </a>
+                                       </li>
+                                    </ul>
+                                 </div>
                                 </div>
                                 <div class="product-caption">
                                     <h5 class="product__title">

@@ -62,7 +62,7 @@
                                <span class="button-text">Add to cart</span>
                                <i class="fa-solid fa-play ms-2"></i>
                             </a>
-                            <a href="#" class="btn btn-outline-secondary add_to_wishlist wishlist-btn">
+                            <a href="{{route('add_favorit_list',$product->id)}}" class="btn btn-outline-secondary add_to_wishlist wishlist-btn">
                                <i class="far fa-heart"></i>
                             </a>
                             <a href="{{route('single_card',$product->id)}}" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#woosq-popup">
