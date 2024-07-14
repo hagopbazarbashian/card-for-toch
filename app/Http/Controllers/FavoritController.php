@@ -24,5 +24,11 @@ class FavoritController extends Controller
 
         
     }
+
+
+    public function listfavorit($id){
+       $favorits = favorit::where('user_sessian' , $id)->with('newproduct')->get();
+       dd($favorits);
+    }
     
 }

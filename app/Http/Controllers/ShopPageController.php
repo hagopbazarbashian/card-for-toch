@@ -16,6 +16,7 @@ class ShopPageController extends Controller
         try {
             $userSession = Session::getId();
             $favorit = favorit::with('newproduct')->where('user_sessian' , $userSession)->get();
+            $favorit_list = favorit::with('newproduct')->where('user_sessian' , $userSession)->first();
 
             $lang = $request->query('lang');
             if ($lang) {
@@ -28,7 +29,7 @@ class ShopPageController extends Controller
  
             $newproducts = newproduct::with('category')->get();
             $categorys = category::get();
-            return view('shop-page', compact('newproducts','categorys','favorit'));
+            return view('shop-page', compact('newproducts','categorys','favorit','favorit_list'));
         } catch (\Throwable $th) {
             throw $th;
         }

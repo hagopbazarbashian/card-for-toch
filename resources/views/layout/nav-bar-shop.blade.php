@@ -118,7 +118,7 @@
                               @foreach($newproducts as $product)
                                 <li>
                                     @if($favorit->contains('product_id', $product->id)) <!-- Adjust 'newproduct_id' as needed -->
-                                        <a href="#" style="font-size: 30px;"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        <a href="{{route('add_favorit_list_show',$favorit_list->user_sessian)}}" style="font-size: 30px;"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                     @else
                                         <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                                     @endif

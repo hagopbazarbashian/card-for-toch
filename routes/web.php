@@ -84,6 +84,7 @@ Route::post('/filter-products', [ShowWithCategory::class, 'filterProducts'])->na
 
 //Favorit List
 Route::get('add-favorit-list/{id}', [FavoritController::class, 'storefavorit'])->name('add_favorit_list');
+Route::get('add-favorit-list-show/{id}' , [FavoritController::class, 'listfavorit'])->name('add_favorit_list_show');
 
 Route::get('/start-process', function () {
     return redirect()->back();
