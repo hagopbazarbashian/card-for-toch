@@ -13,7 +13,7 @@
      }
   } 
 </style>
-
+   
 <section class="category-slider-block">
     <div class="container-fluid">
        <div class="text-center">

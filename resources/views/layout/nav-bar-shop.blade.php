@@ -83,7 +83,7 @@
                   </div>
               </div>
               <!-- Horizontal Menu Start -->
-              <nav id="navbar_main" class="offcanvas mobile-offcanvas nav navbar navbar-expand-xl hover-nav horizontal-nav py-xl-0">
+              <nav id="navbar_main" class="offcanvas mobile-offcanvas nav navbar navbar-expand-xl hover-nav horizontal-nav py-xl-0"> 
                   <div class="container-fluid p-lg-0">
                       <div class="offcanvas-header px-0">
                           <div class="navbar-brand ms-3">
@@ -107,15 +107,15 @@
                       <div class="iq-meta-menu-container d-xl-block d-none">
                           <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
                               <li>
-                                  <a href="#">{{ translate('my_account') }}</a>
+                                  <a href="{{route('register')}}">{{ translate('my_account') }}</a>
                               </li>
-                              <li>
+                              <li>  
                                   <a href="#">{{ translate('customer_support') }}</a>
                               </li>
                               <li>
                                   <a href="#">{{ translate('help') }}</a>
                               </li>
-                              @foreach($newproducts as $product)
+                              {{-- @foreach($newproducts as $product)
                                 <li>
                                     @if($favorit->contains('product_id', $product->id)) <!-- Adjust 'newproduct_id' as needed -->
                                         <a href="{{route('add_favorit_list_show',$favorit_list->user_sessian)}}" style="font-size: 30px;"><i class="fa fa-heart" aria-hidden="true"></i></a>
@@ -123,7 +123,7 @@
                                         <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                                     @endif
                                 </li>
-                            @endforeach
+                            @endforeach --}}
                           </ul>
                       </div>
                       <div class="d-xl-none">

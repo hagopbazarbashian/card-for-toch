@@ -12,6 +12,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ShowWithCategory;
 use App\Http\Controllers\FavoritController;
+use App\Http\Controllers\RegisterController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -45,6 +46,9 @@ use App\Http\Controllers\Admin\Shop\AdminCheckOutControler;
 
 //Home Page
 Route::get('/' , [ShopPageController::class , 'index'])->name('welcome');
+//Login Register Syetem 
+Route::get('register' , [RegisterController::class , 'index'])->name('register');
+
 
 // Route to set language
 Route::get('/set-language/{lang}', [ShopPageController::class, 'setLanguage'])->name('setLanguage');
